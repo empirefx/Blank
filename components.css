@@ -765,7 +765,7 @@ details[open] .accordion-icon {
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   background-color: white;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   border: var(--border-default);
   z-index: var(--z-toast);
