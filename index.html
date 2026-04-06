@@ -65,6 +65,19 @@
       border-radius: var(--radius-lg);
     }
 
+    /* Isolated container with dot pattern */
+    .overview-isolated {
+      background-color: white;
+      background-image: radial-gradient(var(--color-gray-200) 1px, transparent 1px);
+      background-size: 12px 12px;
+      border: var(--border-default);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .overview-swatch {
       width: 32px;
       height: 32px;
@@ -457,7 +470,7 @@
   <aside class="sidebar">
     <div class="sidebar-logo">
       Design System
-      <span>Foundations v1.0</span>
+      <span>Blank v1.0</span>
     </div>
 
     <nav>
@@ -558,6 +571,43 @@
           </div>
         </nav>
       </div>
+
+      <!-- Card -->
+      <div class="overview-item">
+        <div class="overview-isolated" style="width:100%;height:100%;padding:var(--space-4)">
+          <div class="card" style="padding:var(--space-4);min-width:180px">
+            <div class="card-title" style="margin-bottom:var(--space-2)">Card Title</div>
+            <div class="card-body" style="font-size:11px">Card body content here.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="overview-item">
+        <div class="overview-isolated" style="width:100%;height:100%">
+          <div class="modal" style="position:relative;transform:none">
+            <div class="modal-header" style="padding:var(--space-3)">
+              <h3 class="modal-title" style="font-size:var(--font-size-sm)">Modal</h3>
+              <button class="modal-close" style="width:24px;height:24px">&times;</button>
+            </div>
+            <div class="modal-body" style="padding:var(--space-3)">
+              <p style="font-size:11px">Modal body content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="overview-item">
+        <div class="overview-isolated" style="width:100%;height:100%;flex-direction:column;gap:var(--space-2)">
+          <div class="toast toast-success" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message" style="font-size:11px">Success!</span>
+          </div>
+          <div class="toast toast-error" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message" style="font-size:11px">Error!</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <header class="page-header">
@@ -644,10 +694,6 @@
       <p class="color-group-label">Neutrals</p>
       <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block bg-white border"></div>
-          <figcaption><span class="swatch-name">white</span><span class="swatch-hex">#FFFFFF</span></figcaption>
-        </div>
-        <div class="color-swatch">
           <div class="swatch-block bg-gray-50"></div>
           <figcaption><span class="swatch-name">gray-50</span><span class="swatch-hex">#F8F9FA</span></figcaption>
         </div>
@@ -670,10 +716,6 @@
         <div class="color-swatch">
           <div class="swatch-block bg-gray-800"></div>
           <figcaption><span class="swatch-name">gray-800</span><span class="swatch-hex">#343A40</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block bg-black"></div>
-          <figcaption><span class="swatch-name">black</span><span class="swatch-hex">#0D0F10</span></figcaption>
         </div>
       </figure>
     </section>
@@ -1129,16 +1171,18 @@
       </div>
 
       <p class="color-group-label">Card</p>
-      <div class="flex gap-4 mb-4" style="flex-wrap:wrap">
-        <div class="card" style="max-width:320px">
-          <div class="card-header">
-            <h3 class="card-title">Card Title</h3>
-          </div>
-          <div class="card-body">
-            This is a card component used to display grouped content like products, articles, or user profiles.
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-secondary btn-sm">Action</button>
+      <div class="mb-4">
+        <div class="overview-isolated" style="padding:var(--space-6)">
+          <div class="card" style="max-width:320px">
+            <div class="card-header">
+              <h3 class="card-title">Card Title</h3>
+            </div>
+            <div class="card-body">
+              This is a card component used to display grouped content like products, articles, or user profiles.
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-secondary btn-sm">Action</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1193,8 +1237,8 @@
       </div>
 
       <p class="color-group-label">Modal</p>
-      <div class="flex gap-4 mb-4" style="flex-wrap:wrap">
-        <div style="padding:var(--space-8); background:var(--color-gray-100); border-radius:var(--radius-lg)">
+      <div class="mb-4" >
+        <div class="overview-isolated" style="padding:var(--space-8);width:100%;">
           <div class="modal">
             <div class="modal-header">
               <h3 class="modal-title">Modal Title</h3>
@@ -1220,12 +1264,14 @@
       </div>
 
       <p class="color-group-label">Toast</p>
-      <div class="flex gap-4 mb-4" style="flex-wrap:wrap">
-        <div class="toast toast-success">
-          <span class="toast-message">Action completed successfully</span>
-        </div>
-        <div class="toast toast-error">
-          <span class="toast-message">An error occurred</span>
+      <div class="mb-4">
+        <div class="overview-isolated" style="padding:var(--space-6);flex-direction:column;gap:var(--space-2)">
+          <div class="toast toast-success" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message">Action completed successfully</span>
+          </div>
+          <div class="toast toast-error" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message">An error occurred</span>
+          </div>
         </div>
       </div>
 
