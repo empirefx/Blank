@@ -10,6 +10,88 @@
   <link rel="stylesheet" href="components.css" />
 
   <style>
+    /* ── Overview Grid ─────────────────────────────────────────── */
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-4);
+      margin-bottom: var(--space-12);
+    }
+
+    /* Color Card - Primary/Secondary */
+    .overview-color-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-white);
+      border: var(--border-default);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .overview-color-main {
+      flex: 1;
+      min-height: 100px;
+    }
+
+    .overview-color-main .overview-label{
+      position: relative;
+      color: white;
+      margin-left: 10px;
+      margin-top: 20px;
+      font-size: var(--font-size-md);
+    }
+
+    .overview-color-shades {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .overview-color-shade {
+      flex: 1;
+      height: 40px;
+    }
+
+    /* Overview Items */
+    .overview-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-5);
+      background: var(--color-white);
+      border: var(--border-default);
+      border-radius: var(--radius-lg);
+    }
+
+    .overview-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-md);
+      border: var(--border-default);
+      flex-shrink: 0;
+    }
+
+    .overview-label {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-gray-600);
+      text-align: center;
+    }
+
+    .overview-font {
+      font-size: var(--font-size-4xl);
+      color: var(--color-gray-800);
+    }
+
+    .overview-font-display { font-family: var(--font-family-display); }
+    .overview-font-body { font-family: var(--font-family-body); }
+    .overview-font-mono { font-family: var(--font-family-mono); }
+
     /* ── Page Shell ─────────────────────────────────────────── */
     body {
       background: var(--color-gray-50);
@@ -401,13 +483,87 @@
 
   <!-- ── Main ──────────────────────────────────────────────── -->
   <main class="main">
+    <section class="overview">
+      <!-- Primary Color -->
+      <div class="overview-color-card">
+        <div class="overview-color-main" style="background:var(--color-primary)">
+          <span class="overview-label">Primary</span>
+        </div>
+        <div class="overview-color-shades">
+          <div class="overview-color-shade" style="background:var(--color-primary-subtle)" title="subtle"></div>
+          <div class="overview-color-shade" style="background:var(--color-primary-light)" title="light"></div>
+          <div class="overview-color-shade" style="background:var(--color-primary)" title="primary"></div>
+          <div class="overview-color-shade" style="background:var(--color-primary-dark)" title="dark"></div>
+        </div>
+      </div>
+
+      <!-- Secondary Color -->
+      <div class="overview-color-card">
+        <div class="overview-color-main" style="background:var(--color-secondary)">
+          <span class="overview-label">Secondary</span>
+        </div>
+        <div class="overview-color-shades">
+          <div class="overview-color-shade" style="background:var(--color-secondary-subtle)" title="subtle"></div>
+          <div class="overview-color-shade" style="background:var(--color-secondary-light)" title="light"></div>
+          <div class="overview-color-shade" style="background:var(--color-secondary)" title="secondary"></div>
+          <div class="overview-color-shade" style="background:var(--color-secondary-dark)" title="dark"></div>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="overview-item">
+        <span class="overview-font overview-font-display">Aab</span>
+        <span class="overview-label">Display</span>
+      </div>
+      <div class="overview-item">
+        <span class="overview-font overview-font-body">Aab</span>
+        <span class="overview-label">Body</span>
+      </div>
+      <div class="overview-item">
+        <span class="overview-font overview-font-mono">Aab</span>
+        <span class="overview-label">Mono</span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="overview-item" style="flex-direction:row;flex-wrap:wrap;gap:var(--space-2);justify-content:center;padding:var(--space-4)">
+        <button class="btn btn-primary btn-md">Primary</button>
+        <button class="btn btn-secondary btn-dm">Secondary</button>
+        <button class="btn btn-ghost btn-dm">Ghost</button>
+        <button class="btn btn-primary btn-dm" disabled>Disabled</button>
+      </div>
+
+      <!-- Inputs -->
+      <div class="overview-item" style="flex-direction:row;flex-wrap:wrap;gap:var(--space-2);justify-content:center;padding:var(--space-4)">
+        <input type="text" class="input input-sm" placeholder="Write it down..." style="width:100px" />
+        <span class="badge badge-success">Success</span>
+        <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox" checked />
+          <span class="checkbox-label">Checked</span>
+        </label>
+        <label class="radio-wrapper">
+          <input type="radio" name="radio-demo" class="radio" />
+          <span class="radio-label">Option A</span>
+        </label>
+      </div>
+
+      <!-- Navbar -->
+      <div class="overview-item" style="grid-column:span 2;padding:0;overflow:hidden">
+        <nav class="navbar" style="width:100%;border-radius:var(--radius-lg);border-bottom:none;">
+          <a href="#" class="navbar-brand">Brand</a>
+          <div class="navbar-nav">
+            <a href="#" class="navbar-link active">Home</a>
+            <a href="#" class="navbar-link">Features</a>
+            <a href="#" class="navbar-link">Pricing</a>
+          </div>
+        </nav>
+      </div>
+    </section>
 
     <header class="page-header">
       <p class="label">Section 1</p>
       <h1>Foundations</h1>
       <p>The core visual elements that define our brand. All values are defined as CSS custom properties in <code>core.css</code> and referenced via utility classes.</p>
     </header>
-
 
     <!-- ── COLORS ─────────────────────────────────────────── -->
     <section class="section" id="colors">
@@ -717,6 +873,11 @@
       </div>
     </section>
 
+    <header class="page-header">
+      <p class="label">Section 2</p>
+      <h1>Components</h1>
+      <p>Reusable UI elements built from the Design System styles.</p>
+    </header>
 
     <!-- ── BUTTONS ───────────────────────────────────────────── -->
     <section class="section" id="buttons">
@@ -1080,6 +1241,11 @@
       </div>
     </section>
 
+    <header class="page-header">
+      <p class="label">Section 3</p>
+      <h1>Design Tokens</h1>
+      <p>Variables used to store values for colors, spacing, and typography across platforms.</p>
+    </header>
 
     <!-- ── ALL TOKENS ─────────────────────────────────────── -->
     <section class="section" id="tokens">
