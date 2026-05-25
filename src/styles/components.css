@@ -200,6 +200,37 @@
   padding-right: var(--space-12);
 }
 
+/* Listbox (Multi-Select) */
+.listbox {
+  appearance: none;
+  padding: 0;
+  overflow: auto;
+}
+
+.listbox option {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-4);
+  min-height: var(--space-8);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.listbox option:last-child {
+  border-bottom: none;
+}
+
+.listbox option:hover {
+  background-color: var(--color-primary-subtle);
+}
+
+.listbox option:checked {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 
 /* ------------------------------------------------------------
    3. NAVIGATION COMPONENTS

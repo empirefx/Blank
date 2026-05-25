@@ -1046,6 +1046,21 @@
         </div>
       </div>
 
+      <p class="color-group-label">Listbox (Multi-Select)</p>
+      <div class="flex gap-4 mb-4" style="flex-wrap:wrap; max-width:500px">
+        <div class="input-group" style="flex:1; min-width:200px">
+          <label class="input-label" for="select-listbox">Select Frameworks</label>
+          <select multiple class="input listbox" id="select-listbox" size="6">
+            <option value="">React</option>
+            <option value="">Vue.js</option>
+            <option value="">Angular</option>
+            <option value="">Svelte</option>
+            <option value="">Solid.js</option>
+            <option value="">Qwik</option>
+          </select>
+        </div>
+      </div>
+
       <p class="color-group-label" style="margin-top:var(--space-8)">CSS Classes</p>
       <table class="tokens-table" style="max-width:600px">
         <thead>
@@ -1061,6 +1076,7 @@
           <tr><td class="td-name">.input-error-message</td><td>Error message text</td></tr>
           <tr><td class="td-name">.input-success</td><td>Success state styling</td></tr>
           <tr><td class="td-name">.select</td><td>Dropdown with chevron</td></tr>
+          <tr><td class="td-name">.listbox</td><td>Multi-select listbox</td></tr>
         </tbody>
       </table>
     </section>
