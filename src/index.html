@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Design System — Blank 1.0</title>
+  <title>Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/core.css" />
@@ -110,14 +110,14 @@
       background: var(--color-gray-50);
       color: var(--color-gray-900);
       min-height: 100vh;
+      display: flex;
+      align-items: stretch;
     }
 
     /* ── Sidebar ─────────────────────────────────────────────── */
     .sidebar {
-      position: fixed;
       top: 0; left: 0;
       width: 220px;
-      height: 100vh;
       background: white;
       border-right: var(--border-default);
       padding: var(--space-8) var(--space-4);
@@ -147,6 +147,11 @@
       color: var(--color-gray-500);
       display: block;
       margin-top: 2px;
+    }
+
+    .sidebar nav {
+      position: sticky;
+      top: 10px;
     }
 
     .nav-section-label {
@@ -181,8 +186,8 @@
 
     /* ── Main ────────────────────────────────────────────────── */
     .main {
-      margin-left: 220px;
       padding: var(--space-10) var(--space-12);
+      padding-right: 0;
       max-width: 960px;
     }
 
@@ -468,7 +473,7 @@
   <aside class="sidebar">
     <div class="sidebar-logo">
       Design System
-      <span>Blank v1.0</span>
+      <span>Blank</span>
     </div>
 
     <nav>
