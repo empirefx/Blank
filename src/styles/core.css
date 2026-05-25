@@ -256,12 +256,14 @@ code, .mono {
    4. COLOR UTILITY CLASSES
    ------------------------------------------------------------ */
 
-/* Backgrounds */
-.bg-primary         { background-color: var(--color-primary); color: white; }
+/* Surface backgrounds */
+.bg-primary         { background-color: var(--color-gray-50); }
 .bg-primary-light   { background-color: var(--color-primary-light); color: white; }
-.bg-primary-subtle  { background-color: var(--color-primary-subtle); color: var(--color-primary-dark); }
-.bg-secondary       { background-color: var(--color-secondary); color: white; }
-.bg-secondary-subtle{ background-color: var(--color-secondary-subtle); color: var(--color-secondary-dark); }
+.bg-primary-subtle  { background-color: var(--color-gray-100); }
+.bg-secondary       { background-color: white; }
+.bg-secondary-subtle { background-color: #FAFAFA; }
+
+/* Display backgrounds */
 .bg-error           { background-color: var(--color-error); color: white; }
 .bg-error-subtle    { background-color: var(--color-error-subtle); color: var(--color-error); }
 .bg-success         { background-color: var(--color-success); color: white; }

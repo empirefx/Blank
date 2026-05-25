@@ -258,6 +258,11 @@
       padding: 0;
     }
 
+    .color-bg-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
+      gap:var(--space-3)
+    }
+
     .color-swatch {
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -299,6 +304,33 @@
       text-transform: uppercase;
       color: var(--color-gray-400);
       margin: var(--space-4) 0 var(--space-2);
+    }
+
+    /* ── Backgrounds ────────────────────────────────────── */
+    .bg-card {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      min-height: 80px;
+    }
+
+    .bg-card-subtle {
+      border: var(--border-default);
+    }
+
+    .bg-card-label {
+      display: block;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .bg-card-label-dark {
+      color: var(--color-gray-800);
+    }
+
+    .bg-card-hex {
+      display: block;
+      font-size: var(--font-size-xs);
+      color: var(--color-gray-500);
     }
 
     /* ── Typography Scale ────────────────────────────────────── */
@@ -623,13 +655,15 @@
     <section class="section" id="colors">
       <div class="section-header">
         <h2>Color Palette</h2>
+        <span class="section-tag">--name-*</span>
         <span class="section-tag">--color-*</span>
+        <span class="section-tag">--bg-*</span>
       </div>
 
       <p class="color-group-label">Primary</p>
       <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block bg-primary-subtle"></div>
+          <div class="swatch-block" style="background:var(--color-primary-subtle)"></div>
           <figcaption><span class="swatch-name">primary-subtle</span><span class="swatch-hex">#EBF1FF</span></figcaption>
         </div>
         <div class="color-swatch">
@@ -637,7 +671,7 @@
           <figcaption><span class="swatch-name">primary-light</span><span class="swatch-hex">#5C9BFF</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-primary"></div>
+          <div class="swatch-block" style="background:var(--color-primary)"></div>
           <figcaption><span class="swatch-name">primary</span><span class="swatch-hex">#1A6BFF</span></figcaption>
         </div>
         <div class="color-swatch">
@@ -649,7 +683,7 @@
       <p class="color-group-label">Secondary</p>
       <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block bg-secondary-subtle"></div>
+          <div class="swatch-block" style="background:var(--color-secondary-subtle)"></div>
           <figcaption><span class="swatch-name">secondary-subtle</span><span class="swatch-hex">#FFF0EB</span></figcaption>
         </div>
         <div class="color-swatch">
@@ -657,7 +691,7 @@
           <figcaption><span class="swatch-name">secondary-light</span><span class="swatch-hex">#FF9A71</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-secondary"></div>
+          <div class="swatch-block" style="background:var(--color-secondary)"></div>
           <figcaption><span class="swatch-name">secondary</span><span class="swatch-hex">#FF6B35</span></figcaption>
         </div>
         <div class="color-swatch">
@@ -721,8 +755,79 @@
           <figcaption><span class="swatch-name">gray-800</span><span class="swatch-hex">#343A40</span></figcaption>
         </div>
       </figure>
-    </section>
 
+      <p class="color-group-label">Backgrounds</p>
+      <div class="color-bg-grid">
+        <div class="bg-primary bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-primary</span>
+          <span class="bg-card-hex">#F8F9FA</span>
+        </div>
+        <div class="bg-primary-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-primary-subtle</span>
+          <span class="bg-card-hex">#F1F3F5</span>
+        </div>
+        <div class="bg-secondary bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-secondary</span>
+          <span class="bg-card-hex">#FFFFFF</span>
+        </div>
+        <div class="bg-secondary-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-secondary-subtle</span>
+          <span class="bg-card-hex">#FAFAFA</span>
+        </div>
+      </div>
+
+      <p class="color-group-label">Display</p>
+      <div class="color-bg-grid">
+        <div class="bg-primary-light bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-primary-light</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#5C9BFF</span>
+        </div>
+        <div class="bg-error bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-error</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#E53E3E</span>
+        </div>
+        <div class="bg-error-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-error)">bg-error-subtle</span>
+          <span class="bg-card-hex">#FFF5F5</span>
+        </div>
+        <div class="bg-success bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-success</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#38A169</span>
+        </div>
+        <div class="bg-success-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-success)">bg-success-subtle</span>
+          <span class="bg-card-hex">#F0FFF4</span>
+        </div>
+        <div class="bg-warning bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-warning</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#D69E2E</span>
+        </div>
+        <div class="bg-warning-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-warning)">bg-warning-subtle</span>
+          <span class="bg-card-hex">#FFFFF0</span>
+        </div>
+        <div class="bg-white bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-white</span>
+          <span class="bg-card-hex">#FFFFFF</span>
+        </div>
+        <div class="bg-gray-50 bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-gray-50</span>
+          <span class="bg-card-hex">#F8F9FA</span>
+        </div>
+        <div class="bg-gray-100 bg-card bg-card-subtle">
+          <span class="bg-card-label bg-card-label-dark">bg-gray-100</span>
+          <span class="bg-card-hex">#F1F3F5</span>
+        </div>
+        <div class="bg-gray-800 bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-gray-800</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#343A40</span>
+        </div>
+        <div class="bg-black bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-black</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#000000</span>
+        </div>
+      </div>
+    </section>
 
     <!-- ── TYPOGRAPHY ──────────────────────────────────────── -->
     <section class="section" id="typography">
