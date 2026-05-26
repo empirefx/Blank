@@ -13,7 +13,7 @@
   --color-primary-base:       #1A6BFF;
   --color-secondary-base:     #FF6B35;
   --color-tertiary-base:     oklch(from var(--color-primary-base) l calc(c * 0.85) calc(h + 120));
-  --color-surface-base:       white;
+  --color-surface-base:       oklch(from var(--color-primary-base) 0.995 0.008 h);
   --color-error-base:         #E53E3E;
   --color-success-base:       #38A169;
   --color-warning-base:       #D69E2E;
@@ -198,7 +198,7 @@
   --color-primary-base:       #6A9BFF;
   --color-secondary-base:     #FF8B5C;
   --color-tertiary-base:     oklch(from var(--color-primary-base) l calc(c * 0.85) calc(h + 120));
-  --color-surface-base:       #1A1A1A;
+  --color-surface-base:       oklch(from var(--color-primary-base) 0.12 0.008 h);
   --color-error-base:         #FC8181;
   --color-success-base:       #68D391;
   --color-warning-base:       #E9C46A;
