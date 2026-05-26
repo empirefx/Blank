@@ -23,8 +23,7 @@
     .overview-color-card {
       display: flex;
       flex-direction: column;
-      background-color: var(--color-surface-secondary);
-      border: var(--border-default);
+      background-color: var(--color-surface-variant);
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
@@ -36,7 +35,7 @@
 
     .overview-color-main .overview-label{
       position: relative;
-      color: white;
+      color: var(--color-on-primary);
       margin-left: 10px;
       margin-top: 20px;
       font-size: var(--font-size-md);
@@ -60,18 +59,15 @@
       align-items: center;
       justify-content: center;
       gap: var(--space-2);
-      padding: var(--space-5);
-      background-color: var(--color-surface-secondary);
-      border: var(--border-default);
+      background-color: var(--color-surface);
       border-radius: var(--radius-lg);
     }
 
     /* Isolated container with dot pattern */
     .overview-isolated {
-      background-color: var(--color-surface-secondary);
+      background-color: var(--color-surface);
       background-image: radial-gradient(#7B7B7B2B 1px, transparent 1px);
       background-size: 12px 12px;
-      border: var(--border-default);
       border-radius: var(--radius-lg);
       padding: var(--space-5);
       display: flex;
@@ -93,13 +89,13 @@
       top: 10px;
       font-size: var(--font-size-xs);
       font-weight: var(--font-weight-medium);
-      color: var(--color-gray-600);
+      color: var(--color-on-surface-variant);
       text-align: center;
     }
 
     .overview-font {
       font-size: var(--font-size-4xl);
-      color: var(--color-gray-800);
+      color: var(--color-on-surface);
     }
 
     .overview-font-display { font-family: var(--font-family-display); }
@@ -108,8 +104,8 @@
 
     /* ── Page Shell ─────────────────────────────────────────── */
     body {
-      background-color: var(--color-surface-primary);
-      color: var(--color-gray-900);
+      background-color: var(--color-surface-light);
+      color: var(--color-on-surface);
       min-height: 100vh;
       display: flex;
       align-items: stretch;
@@ -119,8 +115,7 @@
     .sidebar {
       top: 0; left: 0;
       width: 220px;
-      background-color: var(--color-surface-secondary);
-      border-right: var(--border-default);
+      background-color: var(--color-surface);
       padding: var(--space-8) var(--space-4);
       display: flex;
       flex-direction: column;
@@ -131,11 +126,10 @@
     .sidebar-logo {
       font-family: var(--font-family-display);
       font-size: var(--font-size-lg);
-      color: var(--color-gray-900);
+      color: var(--color-on-surface);
       letter-spacing: var(--letter-spacing-tight);
       padding: var(--space-2) var(--space-3);
       margin-bottom: var(--space-4);
-      border-bottom: var(--border-default);
       padding-bottom: var(--space-5);
     }
 
@@ -145,7 +139,7 @@
       font-weight: var(--font-weight-semibold);
       letter-spacing: var(--letter-spacing-wider);
       text-transform: uppercase;
-      color: var(--color-gray-500);
+      color: var(--color-outline);
       display: block;
       margin-top: 2px;
     }
@@ -160,7 +154,7 @@
       font-weight: var(--font-weight-semibold);
       letter-spacing: var(--letter-spacing-wider);
       text-transform: uppercase;
-      color: var(--color-gray-400);
+      color: var(--color-outline-variant);
       padding: var(--space-3) var(--space-3) var(--space-1);
       margin-top: var(--space-2);
     }
@@ -171,18 +165,18 @@
       border-radius: var(--radius-md);
       font-size: 13px;
       font-weight: var(--font-weight-medium);
-      color: var(--color-gray-600);
+      color: var(--color-on-surface-variant);
       text-decoration: none;
       transition: background var(--transition-fast), color var(--transition-fast);
     }
     .nav-link:hover {
-      background: var(--color-gray-100);
-      color: var(--color-gray-900);
+      background: var(--color-surface-container);
+      color: var(--color-on-surface);
       text-decoration: none;
     }
     .nav-link.active {
-      background: var(--color-primary-subtle);
-      color: var(--color-primary-dark);
+      background: var(--color-primary-container);
+      color: var(--color-on-primary-container);
     }
 
     /* ── Main ────────────────────────────────────────────────── */
@@ -220,9 +214,9 @@
     .section-tag {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-xs);
-      color: var(--color-gray-600);
+      color: var(--color-on-surface-variant);
       padding: 2px 8px;
-      background: var(--color-gray-100);
+      background: var(--color-surface-container);
       border-radius: var(--radius-round);
     }
 
@@ -232,21 +226,21 @@
       align-items: center;
       gap: var(--space-4);
       padding: var(--space-3) 0;
-      border-bottom: 1px solid var(--color-gray-100);
+      border-bottom: 1px solid var(--color-surface-container);
     }
     .token-row:last-child { border-bottom: none; }
 
     .token-name {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-sm);
-      color: var(--color-primary-dark);
+      color: var(--color-on-primary-container);
       min-width: 260px;
     }
 
     .token-value {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-sm);
-      color: var(--color-gray-500);
+      color: var(--color-outline);
       flex: 1;
     }
 
@@ -267,7 +261,6 @@
     .color-swatch {
       border-radius: var(--radius-md);
       overflow: hidden;
-      border: var(--border-default);
       margin: 0;
     }
 
@@ -277,14 +270,14 @@
 
     figcaption {
       padding: var(--space-2) var(--space-3);
-      background-color: var(--color-surface-secondary);
+      background-color: var(--color-surface-variant);
       margin: 0;
     }
 
     .swatch-name {
       font-size: 11px;
       font-weight: var(--font-weight-semibold);
-      color: var(--color-gray-800);
+      color: var(--color-on-surface);
       display: block;
       white-space: nowrap;
       overflow: hidden;
@@ -294,7 +287,7 @@
     .swatch-hex {
       font-family: var(--font-family-mono);
       font-size: 10px;
-      color: var(--color-gray-500);
+      color: var(--color-outline);
       display: block;
     }
 
@@ -303,7 +296,7 @@
       font-weight: var(--font-weight-semibold);
       letter-spacing: var(--letter-spacing-wider);
       text-transform: uppercase;
-      color: var(--color-gray-400);
+      color: var(--color-outline);
       margin: var(--space-4) 0 var(--space-2);
     }
 
@@ -325,13 +318,13 @@
     }
 
     .bg-card-label-dark {
-      color: var(--color-gray-800);
+      color: var(--color-on-surface);
     }
 
     .bg-card-hex {
       display: block;
       font-size: var(--font-size-xs);
-      color: var(--color-gray-500);
+      color: var(--color-outline);
     }
 
     /* ── Typography Scale ────────────────────────────────────── */
@@ -340,7 +333,7 @@
       align-items: baseline;
       gap: var(--space-6);
       padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-gray-100);
+      border-bottom: 1px solid var(--color-surface-container);
     }
     .type-row:last-child { border-bottom: none; }
 
@@ -362,7 +355,7 @@
     }
 
     .shadow-card {
-      background-color: var(--color-surface-secondary);
+      background-color: var(--color-surface-variant);
       border-radius: var(--radius-lg);
       padding: var(--space-6);
       display: flex;
@@ -371,7 +364,7 @@
     }
 
     .shadow-label { font-weight: var(--font-weight-semibold); font-size: 13px; }
-    .shadow-token { font-family: var(--font-family-mono); font-size: 10px; color: var(--color-gray-500); }
+    .shadow-token { font-family: var(--font-family-mono); font-size: 10px; color: var(--color-outline); }
 
     /* ── Border ──────────────────────────────────────────────── */
     .border-grid {
@@ -381,7 +374,7 @@
     }
 
     .border-demo {
-      background-color: var(--color-surface-secondary);
+      background-color: var(--color-surface-variant);
       padding: var(--space-5) var(--space-6);
       display: flex;
       flex-direction: column;
@@ -389,7 +382,7 @@
     }
 
     .border-label { font-weight: var(--font-weight-semibold); font-size: 13px; }
-    .border-token { font-family: var(--font-family-mono); font-size: 10px; color: var(--color-gray-500); }
+    .border-token { font-family: var(--font-family-mono); font-size: 10px; color: var(--color-outline); }
 
     /* ── Radius ──────────────────────────────────────────────── */
     .radius-grid {
@@ -400,8 +393,8 @@
     }
 
     .radius-demo {
-      background: var(--color-primary-subtle);
-      border: var(--border-width-thick) solid var(--color-primary-light);
+      background: var(--color-primary-container);
+      border: var(--border-width-thick) solid var(--color-primary-container);
       width: 80px;
       height: 80px;
       display: flex;
@@ -414,7 +407,7 @@
     .radius-demo .radius-label {
       font-size: 10px;
       font-weight: var(--font-weight-semibold);
-      color: var(--color-primary-dark);
+      color: var(--color-on-primary-container);
     }
 
     .radius-demo .radius-value {
@@ -431,7 +424,7 @@
     .spacing-bar-wrap {
       flex: 1;
       height: 20px;
-      background: var(--color-gray-100);
+      background: var(--color-surface-container);
       border-radius: var(--radius-sm);
       overflow: hidden;
     }
@@ -446,14 +439,14 @@
     .spacing-name {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-sm);
-      color: var(--color-primary-dark);
+      color: var(--color-on-primary-container);
       min-width: 80px;
     }
 
     .spacing-px {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-sm);
-      color: var(--color-gray-500);
+      color: var(--color-outline);
       min-width: 40px;
       text-align: right;
     }
@@ -471,14 +464,14 @@
       font-weight: var(--font-weight-semibold);
       letter-spacing: var(--letter-spacing-wider);
       text-transform: uppercase;
-      color: var(--color-gray-400);
+      color: var(--color-outline);
       padding: var(--space-2) var(--space-3);
       border-bottom: var(--border-default);
     }
 
     .tokens-table td {
       padding: var(--space-2) var(--space-3);
-      border-bottom: 1px solid var(--color-gray-100);
+      border-bottom: 1px solid var(--color-surface-container);
       vertical-align: middle;
     }
 
@@ -486,18 +479,18 @@
 
     .tokens-table .td-name {
       font-family: var(--font-family-mono);
-      color: var(--color-primary-dark);
+      color: var(--color-on-primary-container);
     }
 
     .tokens-table .td-value {
       font-family: var(--font-family-mono);
-      color: var(--color-gray-500);
+      color: var(--color-outline);
     }
 
     /* ── Scrollbar ────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: var(--radius-round); }
+    ::-webkit-scrollbar-thumb { background: var(--color-outline-variant); border-radius: var(--radius-round); }
   </style>
 </head>
 <body>
@@ -539,8 +532,8 @@
           <span class="overview-label">Primary</span>
         </div>
         <div class="overview-color-shades">
-          <div class="overview-color-shade" style="background:var(--color-primary-subtle)" title="subtle"></div>
           <div class="overview-color-shade" style="background:var(--color-primary-light)" title="light"></div>
+          <div class="overview-color-shade" style="background:var(--color-primary-subtle)" title="subtle"></div>
           <div class="overview-color-shade" style="background:var(--color-primary)" title="primary"></div>
           <div class="overview-color-shade" style="background:var(--color-primary-dark)" title="dark"></div>
         </div>
@@ -552,8 +545,8 @@
           <span class="overview-label">Secondary</span>
         </div>
         <div class="overview-color-shades">
-          <div class="overview-color-shade" style="background:var(--color-secondary-subtle)" title="subtle"></div>
           <div class="overview-color-shade" style="background:var(--color-secondary-light)" title="light"></div>
+          <div class="overview-color-shade" style="background:var(--color-secondary-subtle)" title="subtle"></div>
           <div class="overview-color-shade" style="background:var(--color-secondary)" title="secondary"></div>
           <div class="overview-color-shade" style="background:var(--color-secondary-dark)" title="dark"></div>
         </div>
@@ -596,7 +589,7 @@
       </div>
 
       <!-- Navbar -->
-      <div class="overview-item" style="grid-column:span 2;padding:0;overflow:hidden">
+      <div class="overview-item" style="grid-column:span 2;padding:var(--space-8) var(--space-2);overflow:hidden">
         <span class="overview-label">Navbar</span>
         <nav class="navbar" style="width:100%;border-radius:var(--radius-lg);border-bottom:none;">
           <a href="#" class="navbar-brand">Brand</a>
@@ -662,118 +655,94 @@
       <p class="color-group-label">Primary</p>
       <figure class="color-grid">
         <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-primary-light)"></div>
+          <figcaption><span class="swatch-name">primary-light</span><span class="swatch-hex">tint</span></figcaption>
+        </div>
+        <div class="color-swatch">
           <div class="swatch-block" style="background:var(--color-primary-subtle)"></div>
-          <figcaption><span class="swatch-name">primary-subtle</span><span class="swatch-hex">#EBF1FF</span></figcaption>
+          <figcaption><span class="swatch-name">primary-subtle</span><span class="swatch-hex">shade</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-primary-light"></div>
-          <figcaption><span class="swatch-name">primary-light</span><span class="swatch-hex">#5C9BFF</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-primary)"></div>
+          <div class="swatch-block" style="background:var(--color-primary-base)"></div>
           <figcaption><span class="swatch-name">primary</span><span class="swatch-hex">#1A6BFF</span></figcaption>
         </div>
         <div class="color-swatch">
           <div class="swatch-block" style="background:var(--color-primary-dark)"></div>
-          <figcaption><span class="swatch-name">primary-dark</span><span class="swatch-hex">#0047CC</span></figcaption>
+          <figcaption><span class="swatch-name">primary-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
       </figure>
 
       <p class="color-group-label">Secondary</p>
       <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-secondary-subtle)"></div>
-          <figcaption><span class="swatch-name">secondary-subtle</span><span class="swatch-hex">#FFF0EB</span></figcaption>
-        </div>
-        <div class="color-swatch">
           <div class="swatch-block" style="background:var(--color-secondary-light)"></div>
-          <figcaption><span class="swatch-name">secondary-light</span><span class="swatch-hex">#FF9A71</span></figcaption>
+          <figcaption><span class="swatch-name">secondary-light</span><span class="swatch-hex">tint</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-secondary)"></div>
+          <div class="swatch-block" style="background:var(--color-secondary-subtle)"></div>
+          <figcaption><span class="swatch-name">secondary-subtle</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-secondary-base)"></div>
           <figcaption><span class="swatch-name">secondary</span><span class="swatch-hex">#FF6B35</span></figcaption>
         </div>
         <div class="color-swatch">
           <div class="swatch-block" style="background:var(--color-secondary-dark)"></div>
-          <figcaption><span class="swatch-name">secondary-dark</span><span class="swatch-hex">#CC4411</span></figcaption>
+          <figcaption><span class="swatch-name">secondary-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
       </figure>
 
       <p class="color-group-label">Functional</p>
       <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block bg-error-subtle"></div>
-          <figcaption><span class="swatch-name">error-subtle</span><span class="swatch-hex">#FFF5F5</span></figcaption>
+          <div class="swatch-block" style="background:var(--color-error-light)"></div>
+          <figcaption><span class="swatch-name">error-light</span><span class="swatch-hex">tint</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-error"></div>
+          <div class="swatch-block" style="background:var(--color-error-subtle)"></div>
+          <figcaption><span class="swatch-name">error-subtle</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-error-base)"></div>
           <figcaption><span class="swatch-name">error</span><span class="swatch-hex">#E53E3E</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-success-subtle"></div>
-          <figcaption><span class="swatch-name">success-subtle</span><span class="swatch-hex">#F0FFF4</span></figcaption>
+          <div class="swatch-block" style="background:var(--color-error-dark)"></div>
+          <figcaption><span class="swatch-name">error-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-success"></div>
+          <div class="swatch-block" style="background:var(--color-success-light)"></div>
+          <figcaption><span class="swatch-name">success-light</span><span class="swatch-hex">tint</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-success-subtle)"></div>
+          <figcaption><span class="swatch-name">success-subtle</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-success-base)"></div>
           <figcaption><span class="swatch-name">success</span><span class="swatch-hex">#38A169</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-warning-subtle"></div>
-          <figcaption><span class="swatch-name">warning-subtle</span><span class="swatch-hex">#FFFFF0</span></figcaption>
+          <div class="swatch-block" style="background:var(--color-success-dark)"></div>
+          <figcaption><span class="swatch-name">success-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
         <div class="color-swatch">
-          <div class="swatch-block bg-warning"></div>
+          <div class="swatch-block" style="background:var(--color-warning-light)"></div>
+          <figcaption><span class="swatch-name">warning-light</span><span class="swatch-hex">tint</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-warning-subtle)"></div>
+          <figcaption><span class="swatch-name">warning-subtle</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-warning-base)"></div>
           <figcaption><span class="swatch-name">warning</span><span class="swatch-hex">#D69E2E</span></figcaption>
         </div>
-      </figure>
-
-      <p class="color-group-label">Neutrals</p>
-      <figure class="color-grid">
         <div class="color-swatch">
-          <div class="swatch-block bg-gray-50"></div>
-          <figcaption><span class="swatch-name">gray-50</span><span class="swatch-hex">#F8F9FA</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block bg-gray-100"></div>
-          <figcaption><span class="swatch-name">gray-100</span><span class="swatch-hex">#F1F3F5</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-gray-300)"></div>
-          <figcaption><span class="swatch-name">gray-300</span><span class="swatch-hex">#DEE2E6</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-gray-500)"></div>
-          <figcaption><span class="swatch-name">gray-500</span><span class="swatch-hex">#ADB5BD</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block" style="background:var(--color-gray-700)"></div>
-          <figcaption><span class="swatch-name">gray-700</span><span class="swatch-hex">#495057</span></figcaption>
-        </div>
-        <div class="color-swatch">
-          <div class="swatch-block bg-gray-800"></div>
-          <figcaption><span class="swatch-name">gray-800</span><span class="swatch-hex">#343A40</span></figcaption>
+          <div class="swatch-block" style="background:var(--color-warning-dark)"></div>
+          <figcaption><span class="swatch-name">warning-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
       </figure>
-
-      <p class="color-group-label">Backgrounds</p>
-      <div class="color-bg-grid">
-        <div class="bg-primary bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-primary</span>
-          <span class="bg-card-hex">#F8F9FA</span>
-        </div>
-        <div class="bg-primary-subtle bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-primary-subtle</span>
-          <span class="bg-card-hex">#F1F3F5</span>
-        </div>
-        <div class="bg-secondary bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-secondary</span>
-          <span class="bg-card-hex">#FFFFFF</span>
-        </div>
-        <div class="bg-secondary-subtle bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-secondary-subtle</span>
-          <span class="bg-card-hex">#FAFAFA</span>
-        </div>
-      </div>
 
       <p class="color-group-label">Display</p>
       <div class="color-bg-grid">
@@ -804,26 +773,6 @@
         <div class="bg-warning-subtle bg-card bg-card-subtle">
           <span class="bg-card-label" style="color:var(--color-warning)">bg-warning-subtle</span>
           <span class="bg-card-hex">#FFFFF0</span>
-        </div>
-        <div class="bg-white bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-white</span>
-          <span class="bg-card-hex">#FFFFFF</span>
-        </div>
-        <div class="bg-gray-50 bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-gray-50</span>
-          <span class="bg-card-hex">#F8F9FA</span>
-        </div>
-        <div class="bg-gray-100 bg-card bg-card-subtle">
-          <span class="bg-card-label bg-card-label-dark">bg-gray-100</span>
-          <span class="bg-card-hex">#F1F3F5</span>
-        </div>
-        <div class="bg-gray-800 bg-card">
-          <span class="bg-card-label bg-card-label-light">bg-gray-800</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#343A40</span>
-        </div>
-        <div class="bg-black bg-card">
-          <span class="bg-card-label bg-card-label-light">bg-black</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#000000</span>
         </div>
       </div>
     </section>
@@ -908,7 +857,7 @@
         <span class="section-tag">--shadow-*</span>
       </div>
       <div class="shadow-grid">
-        <div class="shadow-card" style="box-shadow:var(--shadow-none); border: var(--border-default)">
+        <div class="shadow-card" style="box-shadow:var(--shadow-none);">
           <span class="shadow-label">None</span>
           <span class="shadow-token">--shadow-none</span>
         </div>
@@ -1005,7 +954,7 @@
         <h2>Spacing</h2>
         <span class="section-tag">--space-*</span>
       </div>
-      <p style="margin-bottom:var(--space-6); color:var(--color-gray-500); font-size:13px">Base unit: <code>4px</code>. Scale doubles at larger steps. Grid: 12-column, <code>gap: 16px</code>.</p>
+      <p style="margin-bottom:var(--space-6); color: var(--color-outline); font-size:13px">Base unit: <code>4px</code>. Scale doubles at larger steps. Grid: 12-column, <code>gap: 16px</code>.</p>
 
       <div class="spacing-rows">
         <div class="spacing-row"><span class="spacing-name">--space-1</span><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:4px"></div></div><span class="spacing-px">4px</span></div>
@@ -1035,7 +984,7 @@
         <h2>Buttons</h2>
         <span class="section-tag">.btn-*</span>
       </div>
-      <p style="margin-bottom:var(--space-6); color:var(--color-gray-500); font-size:13px">Buttons allow users to trigger actions. Use the appropriate emphasis level for the action's importance.</p>
+      <p style="margin-bottom:var(--space-6); color: var(--color-outline); font-size:13px">Buttons allow users to trigger actions. Use the appropriate emphasis level for the action's importance.</p>
 
       <p class="color-group-label">Variants</p>
       <div class="flex gap-4 mb-4" style="flex-wrap:wrap">
@@ -1086,7 +1035,7 @@
         <h2>Inputs</h2>
         <span class="section-tag">.input*</span>
       </div>
-      <p style="margin-bottom:var(--space-6); color:var(--color-gray-500); font-size:13px">Input fields allow users to enter text. Includes support for labels, placeholders, and error states.</p>
+      <p style="margin-bottom:var(--space-6); color: var(--color-outline); font-size:13px">Input fields allow users to enter text. Includes support for labels, placeholders, and error states.</p>
 
       <p class="color-group-label">Text Field</p>
       <div class="flex gap-4 mb-4" style="flex-wrap:wrap; max-width:500px">
@@ -1380,7 +1329,7 @@
 
       <p class="color-group-label">Tooltip</p>
       <div class="flex gap-4 mb-4" style="flex-wrap:wrap">
-        <div class="tooltip" style="padding:var(--space-8) var(--space-10); background:var(--color-gray-100); border-radius:var(--radius-md)">
+        <div class="tooltip" style="padding:var(--space-8) var(--space-10); background:var(--color-surface-container); border-radius:var(--radius-md)">
           <span>Hover over me</span>
           <span class="tooltip-content">This is a tooltip!</span>
         </div>
@@ -1423,7 +1372,7 @@
         <h2>All Tokens</h2>
         <span class="section-tag">Design Tokens</span>
       </div>
-      <p style="margin-bottom:var(--space-6); color:var(--color-gray-500); font-size:13px">Complete reference of every CSS custom property defined in <code>core.css</code>.</p>
+      <p style="margin-bottom:var(--space-6); color: var(--color-outline); font-size:13px">Complete reference of every CSS custom property defined in <code>core.css</code>.</p>
 
       <table class="tokens-table">
         <thead>
@@ -1492,7 +1441,7 @@
 
     .theme-card {
       width: 320px;
-      background-color: var(--color-surface-secondary);
+      background-color: var(--color-surface);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-md);
       padding: var(--space-4);
@@ -1516,7 +1465,7 @@
       font-family: var(--font-family-body);
       font-size: var(--font-size-base);
       font-weight: var(--font-weight-medium);
-      color: var(--color-gray-700);
+      color: var(--color-on-surface-variant);
     }
 
     .theme-card-title strong {
@@ -1529,7 +1478,7 @@
       font-family: var(--font-family-body);
       font-size: var(--font-size-sm);
       font-weight: var(--font-weight-medium);
-      color: var(--color-gray-500);
+      color: var(--color-outline);
       margin-bottom: var(--space-2);
       letter-spacing: var(--letter-spacing-wide);
       text-transform: uppercase;
@@ -1542,8 +1491,8 @@
       padding: 0;
       border: var(--border-default);
       border-radius: var(--radius-lg);
-      background-color: var(--color-surface-secondary);
-      color: var(--color-gray-900);
+      background-color: var(--color-surface-variant);
+      color: var(--color-on-surface);
       outline: none;
       transition: all var(--transition-base);
       overflow: auto;
@@ -1551,13 +1500,13 @@
 
     .theme-card-listbox:focus {
       border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px var(--color-primary-subtle);
+      box-shadow: 0 0 0 3px var(--color-primary-container);
     }
 
     .theme-card-listbox option {
       padding: var(--space-3) var(--space-4);
       cursor: pointer;
-      border-bottom: 1px solid var(--color-gray-100);
+      border-bottom: 1px solid var(--color-surface-container);
       transition: background var(--transition-fast);
     }
 
@@ -1566,16 +1515,16 @@
     }
 
     .theme-card-listbox option:hover {
-      background: var(--color-primary-subtle);
+      background: var(--color-primary-container);
     }
 
     .theme-card-listbox option:checked {
       background: var(--color-primary);
-      color: white;
+      color: var(--color-on-primary);
     }
 
     .theme-card-listbox option:checked:hover {
-      background: var(--color-primary-dark);
+      background: var(--color-on-primary-container);
     }
 
   </style>
@@ -1600,3 +1549,5 @@
 
 </body>
 </html>
+
+
