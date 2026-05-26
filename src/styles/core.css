@@ -70,12 +70,12 @@
 
   --color-surface:               var(--color-surface-base);
   --color-on-surface:            oklch(from var(--color-surface-base) 0.10 0.005 h);
-  --color-surface-variant:       oklch(from var(--color-surface-base) 0.90 calc(c * 0.05) h);
-  --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.30 calc(c * 0.05) h);
-  --color-surface-container:     oklch(from var(--color-surface-base) 0.93 calc(c * 0.05) h);
+  --color-surface-variant:       oklch(from var(--color-surface-base) 0.90 0.015 h);
+  --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.30 0.010 h);
+  --color-surface-container:     oklch(from var(--color-surface-base) 0.93 0.012 h);
 
-  --color-outline:               oklch(from var(--color-surface-base) 0.50 calc(c * 0.05) h);
-  --color-outline-variant:       oklch(from var(--color-surface-base) 0.80 calc(c * 0.05) h);
+  --color-outline:               oklch(from var(--color-surface-base) 0.50 0.012 h);
+  --color-outline-variant:       oklch(from var(--color-surface-base) 0.80 0.008 h);
 
   /* Semantic custom (success, warning) */
   --color-success:               var(--color-success-base);
@@ -86,8 +86,8 @@
   --color-warning-container:     oklch(from var(--color-warning-base) 0.90 calc(c * 0.2) h);
 
   /* Inverse surface (for tooltips, overlays) */
-  --color-inverse-surface:       oklch(from var(--color-surface-base) 0.20 calc(c * 0.05) h);
-  --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.90 calc(c * 0.05) h);
+  --color-inverse-surface:       oklch(from var(--color-surface-base) 0.20 0.010 h);
+  --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.90 0.005 h);
 
   /* --- TYPOGRAPHY --- */
 
@@ -255,12 +255,12 @@
 
   --color-surface:               var(--color-surface-base);
   --color-on-surface:            oklch(from var(--color-surface-base) 0.90 0.005 h);
-  --color-surface-variant:       oklch(from var(--color-surface-base) 0.30 calc(c * 0.05) h);
-  --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.80 calc(c * 0.05) h);
-  --color-surface-container:     oklch(from var(--color-surface-base) 0.35 calc(c * 0.05) h);
+  --color-surface-variant:       oklch(from var(--color-surface-base) 0.30 0.015 h);
+  --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.80 0.010 h);
+  --color-surface-container:     oklch(from var(--color-surface-base) 0.35 0.012 h);
 
-  --color-outline:               oklch(from var(--color-surface-base) 0.60 calc(c * 0.05) h);
-  --color-outline-variant:       oklch(from var(--color-surface-base) 0.30 calc(c * 0.05) h);
+  --color-outline:               oklch(from var(--color-surface-base) 0.60 0.012 h);
+  --color-outline-variant:       oklch(from var(--color-surface-base) 0.30 0.008 h);
 
   /* Semantic custom (dark) */
   --color-on-success:            oklch(from var(--color-success-base) 0.10 0.005 h);
@@ -269,8 +269,8 @@
   --color-warning-container:     oklch(from var(--color-warning-base) 0.25 calc(c * 0.35) h);
 
   /* Inverse surface (dark) */
-  --color-inverse-surface:       oklch(from var(--color-surface-base) 0.90 calc(c * 0.05) h);
-  --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.10 calc(c * 0.05) h);
+  --color-inverse-surface:       oklch(from var(--color-surface-base) 0.90 0.010 h);
+  --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.10 0.005 h);
 
   --shadow-sm:               0 2px 4px rgba(0,0,0,0.35);
   --shadow-md:               0 4px 12px rgba(0,0,0,0.45);
