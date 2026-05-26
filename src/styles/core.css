@@ -73,6 +73,10 @@
   --color-surface-variant:       oklch(from var(--color-surface-base) 0.90 0.015 h);
   --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.30 0.010 h);
   --color-surface-container:     oklch(from var(--color-surface-base) 0.93 0.012 h);
+  --color-surface-container-lowest:  oklch(from var(--color-surface-base) 0.98 0.008 h);
+  --color-surface-container-low:     oklch(from var(--color-surface-base) 0.95 0.010 h);
+  --color-surface-container-high:    oklch(from var(--color-surface-base) 0.88 0.012 h);
+  --color-surface-container-highest: oklch(from var(--color-surface-base) 0.84 0.012 h);
 
   --color-outline:               oklch(from var(--color-surface-base) 0.50 0.012 h);
   --color-outline-variant:       oklch(from var(--color-surface-base) 0.80 0.008 h);
@@ -85,9 +89,13 @@
   --color-on-warning:            oklch(from var(--color-warning-base) 0.10 0.005 h);
   --color-warning-container:     oklch(from var(--color-warning-base) 0.90 calc(c * 0.2) h);
 
+  /* Scrim (modal backdrop overlay) */
+  --color-scrim:                 oklch(0 0 none / 0.32);
+
   /* Inverse surface (for tooltips, overlays) */
   --color-inverse-surface:       oklch(from var(--color-surface-base) 0.20 0.010 h);
   --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.90 0.005 h);
+  --color-inverse-primary:       oklch(from var(--color-primary-base) 0.90 calc(c * 0.4) h);
 
   /* --- TYPOGRAPHY --- */
 
@@ -258,6 +266,10 @@
   --color-surface-variant:       oklch(from var(--color-surface-base) 0.30 0.015 h);
   --color-on-surface-variant:    oklch(from var(--color-surface-base) 0.80 0.010 h);
   --color-surface-container:     oklch(from var(--color-surface-base) 0.35 0.012 h);
+  --color-surface-container-lowest:  oklch(from var(--color-surface-base) 0.18 0.010 h);
+  --color-surface-container-low:     oklch(from var(--color-surface-base) 0.22 0.010 h);
+  --color-surface-container-high:    oklch(from var(--color-surface-base) 0.45 0.012 h);
+  --color-surface-container-highest: oklch(from var(--color-surface-base) 0.55 0.012 h);
 
   --color-outline:               oklch(from var(--color-surface-base) 0.60 0.012 h);
   --color-outline-variant:       oklch(from var(--color-surface-base) 0.30 0.008 h);
@@ -268,9 +280,13 @@
   --color-on-warning:            oklch(from var(--color-warning-base) 0.10 0.005 h);
   --color-warning-container:     oklch(from var(--color-warning-base) 0.25 calc(c * 0.35) h);
 
+  /* Scrim (modal backdrop overlay) */
+  --color-scrim:                 oklch(0 0 none / 0.32);
+
   /* Inverse surface (dark) */
   --color-inverse-surface:       oklch(from var(--color-surface-base) 0.90 0.010 h);
   --color-on-inverse-surface:    oklch(from var(--color-surface-base) 0.10 0.005 h);
+  --color-inverse-primary:       oklch(from var(--color-primary-base) 0.30 calc(c * 0.5) h);
 
   --shadow-sm:               0 2px 4px rgba(0,0,0,0.35);
   --shadow-md:               0 4px 12px rgba(0,0,0,0.45);

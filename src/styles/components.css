@@ -684,7 +684,7 @@ details[open] .accordion-icon {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-scrim);
   z-index: var(--z-overlay);
   display: flex;
   align-items: center;
