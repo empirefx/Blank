@@ -13,7 +13,7 @@
   --color-primary-base:       #1A6BFF;
   --color-secondary-base:     #FF6B35;
   --color-tertiary-base:     oklch(from var(--color-primary-base) l calc(c * 0.85) calc(h + 120));
-  --color-surface-base:       oklch(from var(--color-primary-base) 0.995 0.008 h);
+  --color-surface-base:       oklch(from var(--color-primary-base) 0.995 0 h);
   --color-error-base:         #E53E3E;
   --color-success-base:       #38A169;
   --color-warning-base:       #D69E2E;

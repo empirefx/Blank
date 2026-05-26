@@ -1507,13 +1507,13 @@
           <span id="color-hex-label" class="color-hex-label"></span>
         </div>
         <div class="color-swatches" role="group" aria-label="Base color swatches">
-          <button class="color-swatch" data-var="--color-primary-base"   style="background: var(--color-primary-base)"   aria-label="Primary"></button>
-          <button class="color-swatch" data-var="--color-secondary-base" style="background: var(--color-secondary-base)" aria-label="Secondary"></button>
-          <button class="color-swatch" data-var="--color-tertiary-base"  style="background: var(--color-tertiary-base)"  aria-label="Tertiary"></button>
-          <button class="color-swatch" data-var="--color-error-base"     style="background: var(--color-error-base)"     aria-label="Error"></button>
-          <button class="color-swatch" data-var="--color-success-base"   style="background: var(--color-success-base)"   aria-label="Success"></button>
-          <button class="color-swatch" data-var="--color-warning-base"   style="background: var(--color-warning-base)"   aria-label="Warning"></button>
-          <button class="color-swatch" data-var="--color-surface-base"   style="background: var(--color-surface-base)"   aria-label="Surface"></button>
+          <button class="color-swatch" data-var="--color-primary-base"   style="background: var(--color-primary-base); border-color: var(--color-primary-dark)"       aria-label="Primary"></button>
+          <button class="color-swatch" data-var="--color-secondary-base" style="background: var(--color-secondary-base); border-color: var(--color-secondary-dark)"   aria-label="Secondary"></button>
+          <button class="color-swatch" data-var="--color-tertiary-base"  style="background: var(--color-tertiary-base); border-color: var(--color-tertiary-dark)"     aria-label="Tertiary"></button>
+          <button class="color-swatch" data-var="--color-error-base"     style="background: var(--color-error-base); border-color: var(--color-error-dark)"           aria-label="Error"></button>
+          <button class="color-swatch" data-var="--color-success-base"   style="background: var(--color-success-base); border-color: var(--color-success-dark)"       aria-label="Success"></button>
+          <button class="color-swatch" data-var="--color-warning-base"   style="background: var(--color-warning-base); border-color: var(--color-warning-dark)"       aria-label="Warning"></button>
+          <button class="color-swatch" data-var="--color-surface-base"   style="background: var(--color-surface-base); border-color: var(--color-surface-dark)"       aria-label="Surface"></button>
         </div>
       </div>
     </div>
@@ -1644,7 +1644,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 2px solid var(--color-outline-variant);
+      border: 2px solid;
       cursor: pointer;
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
       padding: 0;
