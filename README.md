@@ -28,3 +28,7 @@ Open `src/index.html` in any modern browser. No build step required.
 ## Browser Support
 
 Chrome 111+, Firefox 113+, Safari 15.4+ (requires `oklch()` support).
+
+## Asseets
+### Icons
+[Solar Icons](https://www.figma.com/community/file/1166831539721848736/solar-icons-set) by 480Design
