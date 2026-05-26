@@ -2,7 +2,7 @@
 
 A single-page design system demo with OKLCH-based color tokens, M3 color roles, light/dark theme switching, and a live color editor.
 
-![Screenshot](screenshot.png)
+![Screenshot](systemdesign.png)
 
 ## Quick Start
 
