@@ -16,6 +16,8 @@ Open `src/index.html` in any modern browser. No build step required.
 - **Live color editor** — click a base color swatch to open a native picker; changes cascade to every token automatically
 - **Surface tinting** — surface roles inherit primary's hue at low chroma (not achromatic grey)
 - **Full component set** — buttons, inputs, navigation, selection controls, data display, feedback/overlays
+- **Patterns page** — 7 layout skeletons (auth, search, onboarding, data table, empty states, settings, cart)
+- **Pages page** — 6 full-page skeletons (dashboard, PDP, pricing, profile, 404, analytics)
 
 ## Structure
 
@@ -25,6 +27,8 @@ Open `src/index.html` in any modern browser. No build step required.
 | `src/styles/core.css` | All design tokens, M3 roles, utilities |
 | `src/styles/components.css` | Component styles |
 | `src/icons/icons.css` | SVG icon classes |
+| `src/patterns.html` | Pattern layout skeletons |
+| `src/pages.html` | Full page skeletons |
 | `Design System.md` | Full design system reference |
 
 ## Browser Support

@@ -37,17 +37,31 @@ Single-page design system demo built with OKLCH-based color tokens, M3 color rol
 ### File Structure
 
 | File | Role |
-|---|---|
+|---|---|---|
 | `src/styles/core.css` | All design tokens (`:root` + `[data-theme="dark"]`), M3 roles, OKLCH derivations, layout & background utilities |
 | `src/styles/components.css` | Component CSS — buttons, inputs, navigation, selection controls, data display, feedback/overlays |
-| `src/icons/icons.css` | SVG-based icon classes |
+| `src/icons/icons.css` | SVG-based icon classes (Solar Icons) |
 | `src/index.html` | Single-page demo; inline `<style>` for theme panel & color editor, `<script>` for interactivity |
+| `src/patterns.html` | Standalone patterns page — reusable layout skeletons (auth, search, onboarding, data table, empty state, settings, cart) |
+| `src/pages.html` | Standalone pages page — full page skeletons (dashboard, PDP, pricing, profile, 404, analytics) |
 
 ### Theme Switching
 
 - **Separate `:root` (light) and `[data-theme="dark"]` blocks** — no `light-dark()` — enabling future multi-theme extensibility
 - Each block defines same base colors with theme-appropriate lightness targets for M3 roles
 - JS toggle clears multiselect listbox selection, sets `data-theme` on `<html>`, all tokens recompute automatically
+
+### Patterns Page (`patterns.html`)
+
+- 7 pattern skeleton cards in a responsive 3-column grid
+- Each card contains a pure-CSS skeleton preview inside a gradient-overlaid preview pane
+- Skeletons use `--color-surface-container` for low-contrast shapes, no animation
+- Covers: auth form, search & filter, onboarding carousel, data table, empty states, settings layout, cart summary
+
+### Pages Page (`pages.html`)
+
+- 6 page skeleton cards in the same responsive grid layout
+- Full-page-level skeletons: user dashboard (metrics + chart + activity), PDP (image + info + stars + CTA), pricing (3-tier cards), profile (avatar + fields), 404 (large text + message + button), analytics (filters + charts + data table)
 
 ### Color Editor Panel
 
@@ -104,4 +118,6 @@ Open `src/index.html` in any modern browser. No build step required.
 
 - **Color editor** at the bottom of the page to live-preview base color changes
 - **Theme panel** to switch between light and dark modes
+- **Patterns page** at `patterns.html` — layout structure blueprints
+- **Pages page** at `pages.html` — full context-rich page mockups
 - All tokens in `src/styles/core.css` — edit source base colors and everything cascades
