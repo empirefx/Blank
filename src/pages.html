@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pages — Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/core.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="icons/icons.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family-body);
+      background-color: var(--color-surface);
+      color: var(--color-on-surface);
+      min-height: 100vh;
+    }
+
+    .patterns-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 var(--space-8);
+      background-color: var(--color-surface);
+      border-bottom: var(--border-default);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .patterns-navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-family-display);
+      font-size: var(--font-size-lg);
+      color: var(--color-on-surface);
+      text-decoration: none;
+    }
+
+    .patterns-navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .patterns-navbar-link {
+      font-size: 13px;
+      font-weight: var(--font-weight-medium);
+      color: var(--color-on-surface-variant);
+      text-decoration: none;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .patterns-navbar-link:hover {
+      background: var(--color-surface-container);
+      color: var(--color-on-surface);
+    }
+
+    .patterns-navbar-link.active {
+      background: var(--color-primary-container);
+      color: var(--color-on-primary-container);
+    }
+
+    .patterns-navbar-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--color-outline-variant);
+    }
+
+    .patterns-header {
+      text-align: center;
+      padding: var(--space-16) var(--space-8) var(--space-12);
+    }
+
+    .patterns-header h1 {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-family-display);
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-regular);
+      margin-bottom: var(--space-3);
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    .patterns-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--color-on-surface-variant);
+      line-height: 1.6;
+    }
+
+    .patterns-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-8) var(--space-16);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .pattern-card {
+      background-color: var(--color-surface);
+      border: var(--border-default);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: box-shadow var(--transition-base);
+    }
+
+    .pattern-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .pattern-card-preview {
+      position: relative;
+      height: 260px;
+      background-color: var(--color-surface-variant);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6);
+      overflow: hidden;
+    }
+
+    .pattern-card-preview::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, var(--color-surface), transparent);
+      pointer-events: none;
+    }
+
+    .pattern-card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-5) var(--space-6);
+      z-index: 1;
+    }
+
+    .pattern-card-body h3 {
+      font-family: var(--font-family-display);
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-regular);
+      margin-bottom: var(--space-1);
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    .pattern-card-body p {
+      font-size: var(--font-size-sm);
+      color: var(--color-on-surface-variant);
+      line-height: 1.5;
+    }
+
+    .skeleton {
+      background-color: var(--color-surface-container);
+      border-radius: var(--radius-sm);
+    }
+
+    /* Dashboard Skeleton */
+    .sk-dashboard { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sk-dashboard-metrics { display: flex; gap: var(--space-3); }
+    .sk-dashboard-metrics .skeleton { flex: 1; height: 60px; border-radius: var(--radius-md); }
+    .sk-dashboard-chart { width: 100%; height: 80px; border-radius: var(--radius-md); }
+    .sk-dashboard-list { display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-dashboard-list .skeleton { height: 12px; }
+    .sk-dashboard-list .skeleton:first-child { width: 40%; }
+    .sk-dashboard-list .skeleton:nth-child(2) { width: 70%; }
+    .sk-dashboard-list .skeleton:nth-child(3) { width: 55%; }
+    .sk-dashboard-list .skeleton:nth-child(4) { width: 80%; }
+
+    /* Product Detail Page Skeleton */
+    .sk-pdp { width: 100%; max-width: 380px; display: flex; gap: var(--space-4); }
+    .sk-pdp-image { width: 140px; height: 160px; border-radius: var(--radius-lg); flex: none; }
+    .sk-pdp-info { flex: 1; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pdp-info .skeleton:first-child { width: 70%; height: 18px; }
+    .sk-pdp-info .skeleton:nth-child(2) { width: 40%; height: 14px; }
+    .sk-pdp-info .skeleton:nth-child(3) { width: 90%; height: 10px; }
+    .sk-pdp-info .skeleton:nth-child(4) { width: 85%; height: 10px; }
+    .sk-pdp-info .skeleton:nth-child(5) { width: 50%; height: 10px; }
+    .sk-pdp-stars { display: flex; gap: 4px; }
+    .sk-pdp-stars .skeleton { width: 14px; height: 14px; border-radius: 2px; }
+    .sk-pdp-info .skeleton:last-child { width: 100%; height: 36px; border-radius: var(--radius-md); margin-top: var(--space-1); }
+
+    /* Pricing Page Skeleton */
+    .sk-pricing { width: 100%; max-width: 420px; display: flex; gap: var(--space-3); }
+    .sk-pricing-card { flex: 1;  border-radius: var(--radius-lg); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pricing-card .skeleton:first-child { width: 50%; height: 12px; }
+    .sk-pricing-card .skeleton:nth-child(2) { width: 70%; height: 20px; }
+    .sk-pricing-card .skeleton:nth-child(3) { width: 90%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(4) { width: 80%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(5) { width: 60%; height: 8px; }
+    .sk-pricing-card .skeleton:last-child { width: 100%; height: 30px; border-radius: var(--radius-round); margin-top: var(--space-1); }
+    .sk-pricing-card.featured { background: var(--color-on-primary); }
+
+    /* User Profile Skeleton */
+    .sk-profile { width: 280px; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+    .sk-profile-avatar { width: 70px; height: 70px; border-radius: 50%; }
+    .sk-profile .skeleton:nth-child(2) { width: 50%; height: 16px; }
+    .sk-profile .skeleton:nth-child(3) { width: 35%; height: 12px; }
+    .sk-profile-field { width: 100%; display: flex; flex-direction: column; gap: var(--space-1); }
+    .sk-profile-field .skeleton:first-child { width: 30%; height: 10px; }
+    .sk-profile-field .skeleton:last-child { width: 100%; height: 34px; border-radius: var(--radius-md); }
+
+    /* 404 Error Page Skeleton */
+    .sk-error { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+    .sk-error-404 { font-family: var(--font-family-display); font-size: 64px; line-height: 1; color: var(--color-outline); letter-spacing: -0.03em; }
+    .sk-error .skeleton:nth-child(2) { width: 180px; height: 14px; }
+    .sk-error .skeleton:nth-child(3) { width: 120px; height: 36px; border-radius: var(--radius-round); }
+
+    /* Analytics Reports Skeleton */
+    .sk-analytics { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-analytics-filters { display: flex; gap: var(--space-2); }
+    .sk-analytics-filters .skeleton { flex: 1; height: 28px; border-radius: var(--radius-round); }
+    .sk-analytics-charts { display: flex; gap: var(--space-3); }
+    .sk-analytics-charts .skeleton { flex: 1; height: 80px; border-radius: var(--radius-md); }
+    .sk-analytics-table { width: 100%; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-analytics-table-head { display: flex; gap: var(--space-3); }
+    .sk-analytics-table-head .skeleton { flex: 1; height: 12px; }
+    .sk-analytics-table-head .skeleton:first-child { flex: 2; }
+    .sk-analytics-table-row { display: flex; gap: var(--space-3); }
+    .sk-analytics-table-row .skeleton { flex: 1; height: 10px; }
+    .sk-analytics-table-row .skeleton:first-child { flex: 2; }
+
+    @media (max-width: 720px) {
+      .patterns-grid { grid-template-columns: 1fr; padding: 0 var(--space-4) var(--space-8); }
+      .patterns-navbar { padding: 0 var(--space-4); }
+      .patterns-header { padding: var(--space-8) var(--space-4); }
+      .patterns-header h1 { font-size: var(--font-size-2xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="patterns-navbar">
+    <a href="index.html" class="patterns-navbar-brand">Design System</a>
+    <div class="patterns-navbar-nav">
+      <a href="index.html" class="patterns-navbar-link">Components</a>
+      <span class="patterns-navbar-divider"></span>
+      <a href="patterns.html" class="patterns-navbar-link">Patterns</a>
+      <span class="patterns-navbar-divider"></span>
+      <a href="pages.html" class="patterns-navbar-link active">Pages</a>
+    </div>
+  </nav>
+
+  <header class="patterns-header">
+    <h1><i class="solar--card-2-line-duotone"></i> Pages</h1>
+    <p>Pages are the highest level of the ecosystem. They take patterns and components and fill them with context-specific data and real copy.</p>
+  </header>
+
+  <div class="patterns-grid">
+
+    <!-- User Dashboard -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-dashboard">
+          <div class="sk-dashboard-metrics">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="skeleton sk-dashboard-chart"></div>
+          <div class="sk-dashboard-list">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>User Dashboard</h3>
+          <p>The landing screen containing the user's specific metrics, recent activity, and quick actions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-pdp">
+          <div class="skeleton sk-pdp-image"></div>
+          <div class="sk-pdp-info">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="sk-pdp-stars">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>Product Detail Page (PDP)</h3>
+          <p>The specific page for an item, rendering product images, reviews, and pricing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Page -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-pricing">
+          <div class="sk-pricing-card">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-pricing-card featured">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-pricing-card">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>Pricing Page</h3>
+          <p>The public-facing page showcasing subscription tiers, feature tables, and FAQs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Profile Page -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-profile">
+          <div class="skeleton sk-profile-avatar"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="sk-profile-field">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-profile-field">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>User Profile Page</h3>
+          <p>The screen where an individual edits their personal bio, email, and avatar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 404 Error Page -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-error">
+          <div class="sk-error-404">404</div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>404 Error Page</h3>
+          <p>A standalone full-screen layout handling a broken link destination.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Reports Screen -->
+    <div class="pattern-card">
+      <div class="pattern-card-preview">
+        <div class="sk-analytics">
+          <div class="sk-analytics-filters">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-analytics-charts">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-analytics-table">
+            <div class="sk-analytics-table-head">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+          </div>
+        </div>
+        <div class="pattern-card-body">
+          <h3>Analytics Reports Screen</h3>
+          <p>A data-heavy page displaying specific charts, logs, and export options.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
