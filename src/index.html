@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/core.css" />
   <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="icons/icons.css" />
 
   <style>
     /* ── Overview Grid ─────────────────────────────────────────── */
@@ -22,7 +23,7 @@
     .overview-color-card {
       display: flex;
       flex-direction: column;
-      background: white;
+      background-color: var(--color-surface-secondary);
       border: var(--border-default);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -60,15 +61,15 @@
       justify-content: center;
       gap: var(--space-2);
       padding: var(--space-5);
-      background: white;
+      background-color: var(--color-surface-secondary);
       border: var(--border-default);
       border-radius: var(--radius-lg);
     }
 
     /* Isolated container with dot pattern */
     .overview-isolated {
-      background-color: white;
-      background-image: radial-gradient(var(--color-gray-200) 1px, transparent 1px);
+      background-color: var(--color-surface-secondary);
+      background-image: radial-gradient(#7B7B7B2B 1px, transparent 1px);
       background-size: 12px 12px;
       border: var(--border-default);
       border-radius: var(--radius-lg);
@@ -107,7 +108,7 @@
 
     /* ── Page Shell ─────────────────────────────────────────── */
     body {
-      background: var(--color-gray-50);
+      background-color: var(--color-surface-primary);
       color: var(--color-gray-900);
       min-height: 100vh;
       display: flex;
@@ -118,7 +119,7 @@
     .sidebar {
       top: 0; left: 0;
       width: 220px;
-      background: white;
+      background-color: var(--color-surface-secondary);
       border-right: var(--border-default);
       padding: var(--space-8) var(--space-4);
       display: flex;
@@ -276,7 +277,7 @@
 
     figcaption {
       padding: var(--space-2) var(--space-3);
-      background: white;
+      background-color: var(--color-surface-secondary);
       margin: 0;
     }
 
@@ -361,7 +362,7 @@
     }
 
     .shadow-card {
-      background: white;
+      background-color: var(--color-surface-secondary);
       border-radius: var(--radius-lg);
       padding: var(--space-6);
       display: flex;
@@ -380,7 +381,7 @@
     }
 
     .border-demo {
-      background: white;
+      background-color: var(--color-surface-secondary);
       padding: var(--space-5) var(--space-6);
       display: flex;
       flex-direction: column;
@@ -655,9 +656,7 @@
     <section class="section" id="colors">
       <div class="section-header">
         <h2>Color Palette</h2>
-        <span class="section-tag">--name-*</span>
-        <span class="section-tag">--color-*</span>
-        <span class="section-tag">--bg-*</span>
+        <span class="section-tag">--name-* --color-* .bg-*</span>
       </div>
 
       <p class="color-group-label">Primary</p>
@@ -1467,6 +1466,137 @@
     </section>
 
   </main>
+
+  <section class="panel">
+    <div class="theme-card">
+      <div class="theme-card-header">
+        <i class="solar--paint-roller-line-duotone theme-card-icon"></i>
+        <span class="theme-card-title">Selected theme — <strong id="theme-name">Light</strong></span>
+      </div>
+      <label class="theme-card-label" for="theme-select">Choose a theme</label>
+      <select multiple class="theme-card-listbox" id="theme-select" size="2">
+        <option value="light" selected>Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </section>
+
+  <style>
+    /* ── Theme Panel ──────────────────────────────────────────── */
+    .panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-8);
+    }
+
+    .theme-card {
+      width: 320px;
+      background-color: var(--color-surface-secondary);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-4);
+      transition: background var(--transition-base), border-color var(--transition-base);
+      position: sticky;
+      top: 10px;
+    }
+
+    .theme-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+
+    .theme-card-icon {
+      font-size: var(--font-size-xl);
+    }
+
+    .theme-card-title {
+      font-family: var(--font-family-body);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-gray-700);
+    }
+
+    .theme-card-title strong {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .theme-card-label {
+      display: block;
+      font-family: var(--font-family-body);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-gray-500);
+      margin-bottom: var(--space-2);
+      letter-spacing: var(--letter-spacing-wide);
+      text-transform: uppercase;
+    }
+
+    .theme-card-listbox {
+      width: 100%;
+      font-family: var(--font-family-body);
+      font-size: var(--font-size-base);
+      padding: 0;
+      border: var(--border-default);
+      border-radius: var(--radius-lg);
+      background-color: var(--color-surface-secondary);
+      color: var(--color-gray-900);
+      outline: none;
+      transition: all var(--transition-base);
+      overflow: auto;
+    }
+
+    .theme-card-listbox:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-subtle);
+    }
+
+    .theme-card-listbox option {
+      padding: var(--space-3) var(--space-4);
+      cursor: pointer;
+      border-bottom: 1px solid var(--color-gray-100);
+      transition: background var(--transition-fast);
+    }
+
+    .theme-card-listbox option:last-child {
+      border-bottom: none;
+    }
+
+    .theme-card-listbox option:hover {
+      background: var(--color-primary-subtle);
+    }
+
+    .theme-card-listbox option:checked {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .theme-card-listbox option:checked:hover {
+      background: var(--color-primary-dark);
+    }
+
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var listbox = document.getElementById('theme-select');
+      var themeName = document.getElementById('theme-name');
+
+      function applyTheme(value) {
+        var label = listbox.querySelector('option[value="' + value + '"]').textContent;
+        themeName.textContent = label;
+        document.documentElement.setAttribute('data-theme', value);
+      }
+
+      listbox.addEventListener('change', function() {
+        var selected = listbox.value;
+        if (selected) applyTheme(selected);
+      });
+    });
+  </script>
 
 </body>
 </html>
