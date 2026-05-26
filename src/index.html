@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="index" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A comprehensive design system demo with M3 color roles, OKLCH tokens, and interactive theme switching" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1A1A1A" />
   <title>Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -590,10 +594,10 @@
 
       <!-- Inputs -->
       <div class="overview-item" style="flex-direction:row;flex-wrap:wrap;gap:var(--space-2);justify-content:center;padding:var(--space-4)">
-        <input type="text" class="input input-sm" placeholder="Write it down..." style="width:100px" />
+        <input type="text" class="input input-sm" placeholder="Write it down..." aria-label="Search" name="search" style="width:100px" />
         <span class="badge badge-success">Success</span>
         <label class="checkbox-wrapper">
-          <input type="checkbox" class="checkbox" checked />
+          <input type="checkbox" class="checkbox" checked name="overview-checked" />
           <span class="checkbox-label">Checked</span>
         </label>
         <label class="radio-wrapper">
@@ -1140,16 +1144,16 @@
       <p class="color-group-label">Sizes</p>
       <div class="flex gap-4 mb-4" style="flex-wrap:wrap; max-width:500px">
         <div class="input-group" style="flex:1">
-          <label class="input-label">Small</label>
-          <input type="text" class="input input-sm" placeholder="Small input" />
+          <label class="input-label" for="size-sm">Small</label>
+          <input id="size-sm" type="text" class="input input-sm" placeholder="Small input" />
         </div>
         <div class="input-group" style="flex:1">
-          <label class="input-label">Default</label>
-          <input type="text" class="input" placeholder="Default input" />
+          <label class="input-label" for="size-default">Default</label>
+          <input id="size-default" type="text" class="input" placeholder="Default input" />
         </div>
         <div class="input-group" style="flex:1">
-          <label class="input-label">Large</label>
-          <input type="text" class="input input-lg" placeholder="Large input" />
+          <label class="input-label" for="size-lg">Large</label>
+          <input id="size-lg" type="text" class="input input-lg" placeholder="Large input" />
         </div>
       </div>
 
