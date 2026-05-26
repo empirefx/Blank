@@ -816,18 +816,21 @@ details[open] .accordion-icon {
 }
 
 .toast-success {
+  border-color: var(--color-success);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-container);
   color: var(--color-on-success);
 }
 
 .toast-error {
+  border-color: var(--color-error);
   border-left: 4px solid var(--color-error);
   background-color: var(--color-error-container);
   color: var(--color-on-error);
 }
 
 .toast-warning {
+  border-color: var(--color-warning);
   border-left: 4px solid var(--color-warning);
 }
 
