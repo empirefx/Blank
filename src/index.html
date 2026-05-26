@@ -163,7 +163,9 @@
     }
 
     .nav-link {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
       padding: var(--space-2) var(--space-3);
       border-radius: var(--radius-md);
       font-size: 13px;
@@ -171,6 +173,10 @@
       color: var(--color-on-surface-variant);
       text-decoration: none;
       transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .nav-link i {
+      font-size: 2.3em;
+      margin-right: 10px;
     }
     .nav-link:hover {
       background: var(--color-surface-container);
@@ -524,6 +530,9 @@
 
       <div class="nav-section-label">Design Tokens</div>
       <a href="#tokens"     class="nav-link">All Tokens</a>
+
+      <div class="nav-section-label">Display examples</div>
+      <a href="patterns.html" class="nav-link"><i class="solar--layers-line-duotone"></i> Patterns</a>
     </nav>
   </aside>
 
