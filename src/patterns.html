@@ -27,8 +27,7 @@
       justify-content: space-between;
       height: 64px;
       padding: 0 var(--space-8);
-      background-color: var(--color-surface);
-      border-bottom: var(--border-default);
+      background-color: var(--color-surface-container-lowest);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -112,7 +111,7 @@
 
     .pattern-card {
       background-color: var(--color-surface);
-      border: var(--border-default);
+      border: 2px var(--color-surface-variant) solid;
       border-radius: var(--radius-xl);
       overflow: hidden;
       transition: box-shadow var(--transition-base);
@@ -120,6 +119,7 @@
 
     .pattern-card:hover {
       box-shadow: var(--shadow-md);
+      cursor: pointer;
     }
 
     .pattern-card-preview {
