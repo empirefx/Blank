@@ -9,165 +9,8 @@
   <link rel="stylesheet" href="styles/core.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="icons/icons.css" />
+  <link rel="stylesheet" href="styles/view.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-family-body);
-      background-color: var(--color-surface);
-      color: var(--color-on-surface);
-      min-height: 100vh;
-    }
-
-    .patterns-navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      padding: 0 var(--space-8);
-      background-color: var(--color-surface-container-lowest);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .patterns-navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-lg);
-      color: var(--color-on-surface);
-      text-decoration: none;
-    }
-
-    .patterns-navbar-nav {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .patterns-navbar-link {
-      font-size: 13px;
-      font-weight: var(--font-weight-medium);
-      color: var(--color-on-surface-variant);
-      text-decoration: none;
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
-
-    .patterns-navbar-link:hover {
-      background: var(--color-surface-container);
-      color: var(--color-on-surface);
-    }
-
-    .patterns-navbar-link.active {
-      background: var(--color-primary-container);
-      color: var(--color-on-primary-container);
-    }
-
-    .patterns-navbar-divider {
-      width: 1px;
-      height: 24px;
-      background: var(--color-outline-variant);
-    }
-
-    .patterns-header {
-      text-align: center;
-      padding: var(--space-16) var(--space-8) var(--space-12);
-    }
-
-    .patterns-header h1 {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-3xl);
-      font-weight: var(--font-weight-regular);
-      margin-bottom: var(--space-3);
-      letter-spacing: var(--letter-spacing-tight);
-    }
-
-    .patterns-header p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--color-on-surface-variant);
-      line-height: 1.6;
-    }
-
-    .patterns-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-8) var(--space-16);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--space-6);
-    }
-
-    .pattern-card {
-      background-color: var(--color-surface);
-      border: 2px var(--color-surface-variant) solid;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: box-shadow var(--transition-base);
-    }
-
-    .pattern-card:hover {
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-    }
-
-    .pattern-card-preview {
-      position: relative;
-      height: 260px;
-      background-color: var(--color-surface-variant);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-6);
-      overflow: hidden;
-    }
-
-    .pattern-card-preview::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 50%;
-      background: linear-gradient(to top, var(--color-surface), transparent);
-      pointer-events: none;
-    }
-
-    .pattern-card-body {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--space-5) var(--space-6);
-      z-index: 1;
-    }
-
-    .pattern-card-body h3 {
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-regular);
-      margin-bottom: var(--space-1);
-      letter-spacing: var(--letter-spacing-tight);
-    }
-
-    .pattern-card-body p {
-      font-size: var(--font-size-sm);
-      color: var(--color-on-surface-variant);
-      line-height: 1.5;
-    }
-
-    .skeleton {
-      background-color: var(--color-surface-container);
-      border-radius: var(--radius-sm);
-    }
-
     /* Dashboard Skeleton */
     .sk-dashboard { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-4); }
     .sk-dashboard-metrics { display: flex; gap: var(--space-3); }
@@ -232,38 +75,31 @@
     .sk-analytics-table-row { display: flex; gap: var(--space-3); }
     .sk-analytics-table-row .skeleton { flex: 1; height: 10px; }
     .sk-analytics-table-row .skeleton:first-child { flex: 2; }
-
-    @media (max-width: 720px) {
-      .patterns-grid { grid-template-columns: 1fr; padding: 0 var(--space-4) var(--space-8); }
-      .patterns-navbar { padding: 0 var(--space-4); }
-      .patterns-header { padding: var(--space-8) var(--space-4); }
-      .patterns-header h1 { font-size: var(--font-size-2xl); }
-    }
   </style>
 </head>
 <body>
 
-  <nav class="patterns-navbar">
-    <a href="index.html" class="patterns-navbar-brand">Design System</a>
-    <div class="patterns-navbar-nav">
-      <a href="index.html" class="patterns-navbar-link">Components</a>
-      <span class="patterns-navbar-divider"></span>
-      <a href="patterns.html" class="patterns-navbar-link">Patterns</a>
-      <span class="patterns-navbar-divider"></span>
-      <a href="pages.html" class="patterns-navbar-link active">Pages</a>
+  <nav class="view-navbar">
+    <a href="index.html" class="view-navbar-brand">Design System</a>
+    <div class="view-navbar-nav">
+      <a href="index.html" class="view-navbar-link">Components</a>
+      <span class="view-navbar-divider"></span>
+      <a href="patterns.html" class="view-navbar-link">Patterns</a>
+      <span class="view-navbar-divider"></span>
+      <a href="pages.html" class="view-navbar-link active">Pages</a>
     </div>
   </nav>
 
-  <header class="patterns-header">
+  <header class="view-header">
     <h1><i class="solar--card-2-line-duotone"></i> Pages</h1>
     <p>Pages are the highest level of the ecosystem. They take patterns and components and fill them with context-specific data and real copy.</p>
   </header>
 
-  <div class="patterns-grid">
+  <div class="view-grid">
 
     <!-- User Dashboard -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-dashboard">
           <div class="sk-dashboard-metrics">
             <div class="skeleton"></div>
@@ -278,7 +114,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>User Dashboard</h3>
           <p>The landing screen containing the user's specific metrics, recent activity, and quick actions.</p>
         </div>
@@ -286,8 +122,8 @@
     </div>
 
     <!-- Product Detail Page -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-pdp">
           <div class="skeleton sk-pdp-image"></div>
           <div class="sk-pdp-info">
@@ -306,7 +142,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Product Detail Page (PDP)</h3>
           <p>The specific page for an item, rendering product images, reviews, and pricing.</p>
         </div>
@@ -314,8 +150,8 @@
     </div>
 
     <!-- Pricing Page -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-pricing">
           <div class="sk-pricing-card">
             <div class="skeleton"></div>
@@ -342,7 +178,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Pricing Page</h3>
           <p>The public-facing page showcasing subscription tiers, feature tables, and FAQs.</p>
         </div>
@@ -350,8 +186,8 @@
     </div>
 
     <!-- User Profile Page -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-profile">
           <div class="skeleton sk-profile-avatar"></div>
           <div class="skeleton"></div>
@@ -365,7 +201,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>User Profile Page</h3>
           <p>The screen where an individual edits their personal bio, email, and avatar.</p>
         </div>
@@ -373,14 +209,14 @@
     </div>
 
     <!-- 404 Error Page -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-error">
           <div class="sk-error-404">404</div>
           <div class="skeleton"></div>
           <div class="skeleton"></div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>404 Error Page</h3>
           <p>A standalone full-screen layout handling a broken link destination.</p>
         </div>
@@ -388,8 +224,8 @@
     </div>
 
     <!-- Analytics Reports Screen -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-analytics">
           <div class="sk-analytics-filters">
             <div class="skeleton"></div>
@@ -411,7 +247,7 @@
             <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Analytics Reports Screen</h3>
           <p>A data-heavy page displaying specific charts, logs, and export options.</p>
         </div>

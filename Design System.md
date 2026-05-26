@@ -40,6 +40,7 @@ Single-page design system demo built with OKLCH-based color tokens, M3 color rol
 |---|---|---|
 | `src/styles/core.css` | All design tokens (`:root` + `[data-theme="dark"]`), M3 roles, OKLCH derivations, layout & background utilities |
 | `src/styles/components.css` | Component CSS — buttons, inputs, navigation, selection controls, data display, feedback/overlays |
+| `src/styles/view.css` | Shared view layout — navbar, header, grid, card, skeleton for patterns & pages pages |
 | `src/icons/icons.css` | SVG-based icon classes (Solar Icons) |
 | `src/index.html` | Single-page demo; inline `<style>` for theme panel & color editor, `<script>` for interactivity |
 | `src/patterns.html` | Standalone patterns page — reusable layout skeletons (auth, search, onboarding, data table, empty state, settings, cart) |

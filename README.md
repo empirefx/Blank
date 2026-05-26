@@ -26,6 +26,7 @@ Open `src/index.html` in any modern browser. No build step required.
 | `src/index.html` | Single-page demo, theme panel, color editor |
 | `src/styles/core.css` | All design tokens, M3 roles, utilities |
 | `src/styles/components.css` | Component styles |
+| `src/styles/view.css` | Shared view layout (navbar, grid, card, skeleton) |
 | `src/icons/icons.css` | SVG icon classes |
 | `src/patterns.html` | Pattern layout skeletons |
 | `src/pages.html` | Full page skeletons |

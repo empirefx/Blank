@@ -9,171 +9,8 @@
   <link rel="stylesheet" href="styles/core.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="icons/icons.css" />
+  <link rel="stylesheet" href="styles/view.css" />
   <style>
-    /* ── Reset ──────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-family-body);
-      background-color: var(--color-surface);
-      color: var(--color-on-surface);
-      min-height: 100vh;
-    }
-
-    /* ── Navbar ─────────────────────────────────────────────── */
-    .patterns-navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      padding: 0 var(--space-8);
-      background-color: var(--color-surface-container-lowest);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .patterns-navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-lg);
-      color: var(--color-on-surface);
-      text-decoration: none;
-    }
-
-    .patterns-navbar-nav {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .patterns-navbar-link {
-      font-size: 13px;
-      font-weight: var(--font-weight-medium);
-      color: var(--color-on-surface-variant);
-      text-decoration: none;
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
-
-    .patterns-navbar-link:hover {
-      background: var(--color-surface-container);
-      color: var(--color-on-surface);
-    }
-
-    .patterns-navbar-link.active {
-      background: var(--color-primary-container);
-      color: var(--color-on-primary-container);
-    }
-
-    .patterns-navbar-divider {
-      width: 1px;
-      height: 24px;
-      background: var(--color-outline-variant);
-    }
-
-    /* ── Header ─────────────────────────────────────────────── */
-    .patterns-header {
-      text-align: center;
-      padding: var(--space-16) var(--space-8) var(--space-12);
-    }
-
-    .patterns-header h1 {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-3xl);
-      font-weight: var(--font-weight-regular);
-      margin-bottom: var(--space-3);
-      letter-spacing: var(--letter-spacing-tight);
-    }
-
-    .patterns-header p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--color-on-surface-variant);
-      line-height: 1.6;
-    }
-
-    /* ── Patterns Grid ──────────────────────────────────────── */
-    .patterns-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-8) var(--space-16);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--space-6);
-    }
-
-    .pattern-card {
-      background-color: var(--color-surface);
-      border: 2px var(--color-surface-variant) solid;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: box-shadow var(--transition-base);
-    }
-
-    .pattern-card:hover {
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-    }
-
-    .pattern-card-preview {
-      position: relative;
-      height: 260px;
-      background-color: var(--color-surface-variant);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-6);
-      overflow: hidden;
-    }
-
-    .pattern-card-preview::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 50%;
-      background: linear-gradient(to top, var(--color-surface), transparent);
-      pointer-events: none;
-    }
-
-    .pattern-card-body {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--space-5) var(--space-6);
-      z-index: 1;
-    }
-
-    .pattern-card-body h3 {
-      font-family: var(--font-family-display);
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-regular);
-      margin-bottom: var(--space-1);
-      letter-spacing: var(--letter-spacing-tight);
-    }
-
-    .pattern-card-body p {
-      font-size: var(--font-size-sm);
-      color: var(--color-on-surface-variant);
-      line-height: 1.5;
-    }
-
-    /* ── Skeleton Loader (Pure CSS) ─────────────────────────── */
-    .skeleton {
-      background-color: var(--color-surface-container);
-      border-radius: var(--radius-sm);
-    }
-
-    /* Auth Form Skeleton */
     .sk-auth { width: 280px; display: flex; flex-direction: column; gap: var(--space-4); }
     .sk-auth .skeleton { height: 14px; }
     .sk-auth .skeleton:first-child { width: 40%; }
@@ -257,42 +94,34 @@
     .sk-cart-total .skeleton:first-child { width: 50px; }
     .sk-cart-total .skeleton:last-child { width: 60px; }
     .sk-cart .skeleton:last-child { width: 100%; height: 40px; border-radius: var(--radius-md); margin-top: var(--space-1); }
-
-    /* ── Responsive ─────────────────────────────────────────── */
-    @media (max-width: 720px) {
-      .patterns-grid { grid-template-columns: 1fr; padding: 0 var(--space-4) var(--space-8); }
-      .patterns-navbar { padding: 0 var(--space-4); }
-      .patterns-header { padding: var(--space-8) var(--space-4); }
-      .patterns-header h1 { font-size: var(--font-size-2xl); }
-    }
   </style>
 </head>
 <body>
 
   <!-- ── Navbar ───────────────────────────────────────────── -->
-  <nav class="patterns-navbar">
-    <a href="index.html" class="patterns-navbar-brand">Design System</a>
-    <div class="patterns-navbar-nav">
-      <a href="index.html" class="patterns-navbar-link">Components</a>
-      <span class="patterns-navbar-divider"></span>
-      <a href="patterns.html" class="patterns-navbar-link active">Patterns</a>
-      <span class="patterns-navbar-divider"></span>
-      <a href="pages.html" class="patterns-navbar-link">Pages</a>
+  <nav class="view-navbar">
+    <a href="index.html" class="view-navbar-brand">Design System</a>
+    <div class="view-navbar-nav">
+      <a href="index.html" class="view-navbar-link">Components</a>
+      <span class="view-navbar-divider"></span>
+      <a href="patterns.html" class="view-navbar-link active">Patterns</a>
+      <span class="view-navbar-divider"></span>
+      <a href="pages.html" class="view-navbar-link">Pages</a>
     </div>
   </nav>
 
   <!-- ── Header ────────────────────────────────────────────── -->
-  <header class="patterns-header">
+  <header class="view-header">
     <h1><i class="solar--layers-line-duotone"></i> Patterns</h1>
     <p>Reusable layouts and workflows that combine components into complete user experiences. Each pattern is a structural blueprint for a common user action.</p>
   </header>
 
   <!-- ── Patterns Grid ─────────────────────────────────────── -->
-  <div class="patterns-grid">
+  <div class="view-grid">
 
     <!-- Authentication Flow -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-auth">
           <div class="skeleton"></div>
           <div class="skeleton"></div>
@@ -300,7 +129,7 @@
           <div class="skeleton"></div>
           <div class="skeleton"></div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Authentication Flow</h3>
           <p>The layout structure for login, signup, and forgot-password steps, with form fields and a primary CTA.</p>
         </div>
@@ -308,8 +137,8 @@
     </div>
 
     <!-- Search & Filter -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-search">
           <div class="skeleton"></div>
           <div class="sk-search-row">
@@ -318,7 +147,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Search &amp; Filter</h3>
           <p>A combination of an input field, dropdown filters, and tag chips for narrowing results.</p>
         </div>
@@ -326,8 +155,8 @@
     </div>
 
     <!-- Onboarding Carousel -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-onboard">
           <div class="sk-onboard-text">
             <div class="skeleton"></div>
@@ -339,7 +168,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Onboarding Carousel</h3>
           <p>A step-by-step wizard pattern with illustration, headline, dot indicators, and "Next" / "Skip" actions.</p>
         </div>
@@ -347,8 +176,8 @@
     </div>
 
     <!-- Data Table with Pagination -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-table">
           <div class="sk-table-head">
             <div class="skeleton"></div>
@@ -369,7 +198,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Data Table with Pagination</h3>
           <p>A complex pattern combining data rows, selection checkboxes, and page navigation controls.</p>
         </div>
@@ -377,15 +206,15 @@
     </div>
 
     <!-- Empty States -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-empty">
           <div class="skeleton"></div>
           <div class="skeleton"></div>
           <div class="skeleton"></div>
           <div class="skeleton"></div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Empty States</h3>
           <p>The standardized layout with illustration, headline, supporting text, and a primary action button used when no data exists.</p>
         </div>
@@ -393,8 +222,8 @@
     </div>
 
     <!-- Settings Layout -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-settings">
           <div class="sk-settings-sidebar">
             <div class="skeleton"></div>
@@ -410,7 +239,7 @@
             <div class="skeleton"></div>
           </div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Settings Layout</h3>
           <p>A standard split-pane pattern with sidebar navigation on the left and form inputs on the right.</p>
         </div>
@@ -418,8 +247,8 @@
     </div>
 
     <!-- Checkout / Cart Summary -->
-    <div class="pattern-card">
-      <div class="pattern-card-preview">
+    <div class="view-card">
+      <div class="view-card-preview">
         <div class="sk-cart">
           <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
           <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
@@ -427,7 +256,7 @@
           <div class="sk-cart-total"><div class="skeleton"></div><div class="skeleton"></div></div>
           <div class="skeleton"></div>
         </div>
-        <div class="pattern-card-body">
+        <div class="view-card-body">
           <h3>Checkout / Cart Summary</h3>
           <p>A persistent summary block pattern with line items, totals, and a primary CTA used across purchasing steps.</p>
         </div>
