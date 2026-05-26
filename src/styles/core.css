@@ -12,7 +12,7 @@
   /* SOURCE COLORS — set once per theme; everything else auto-computes via OKLCH */
   --color-primary-base:       #1A6BFF;
   --color-secondary-base:     #FF6B35;
-  --color-tertiary-base:        red;
+  --color-tertiary-base:     oklch(from var(--color-primary-base) l calc(c * 0.85) calc(h + 120));
   --color-surface-base:       white;
   --color-error-base:         #E53E3E;
   --color-success-base:       #38A169;
@@ -197,7 +197,7 @@
   /* SOURCE COLORS (dark palette) */
   --color-primary-base:       #6A9BFF;
   --color-secondary-base:     #FF8B5C;
-  --color-tertiary-base:        red;
+  --color-tertiary-base:     oklch(from var(--color-primary-base) l calc(c * 0.85) calc(h + 120));
   --color-surface-base:       #1A1A1A;
   --color-error-base:         #FC8181;
   --color-success-base:       #68D391;
@@ -396,13 +396,21 @@ code, .mono {
    ------------------------------------------------------------ */
 
 /* Display backgrounds */
-.bg-primary-light   { background-color: var(--color-primary-light); }
+.bg-primary         { background-color: var(--color-primary); color: var(--color-on-primary); }
+.bg-primary-light   { background-color: var(--color-primary-light); color: var(--color-on-surface); }
+.bg-primary-subtle  { background-color: var(--color-primary-subtle); color: var(--color-on-surface); }
+.bg-secondary       { background-color: var(--color-secondary); color: var(--color-on-secondary); }
+.bg-secondary-light { background-color: var(--color-secondary-light); color: var(--color-on-surface); }
+.bg-secondary-subtle{ background-color: var(--color-secondary-subtle); color: var(--color-on-surface); }
+.bg-tertiary        { background-color: var(--color-tertiary); color: var(--color-on-tertiary); }
+.bg-tertiary-light  { background-color: var(--color-tertiary-light); color: var(--color-on-surface); }
+.bg-tertiary-subtle { background-color: var(--color-tertiary-subtle); color: var(--color-on-surface); }
 .bg-error           { background-color: var(--color-error); color: var(--color-on-error); }
 .bg-error-subtle    { background-color: var(--color-error-subtle); color: var(--color-error); }
 .bg-success         { background-color: var(--color-success); color: var(--color-on-success); }
 .bg-success-subtle  { background-color: var(--color-success-subtle); color: var(--color-success); }
 .bg-warning         { background-color: var(--color-warning); color: var(--color-on-warning); }
-.bg-warning-subtle  { background-color: var(--color-warning-container); color: var(--color-warning); }
+.bg-warning-subtle  { background-color: var(--color-warning-subtle); color: var(--color-warning); }
 
 /* Text colors */
 .text-primary       { color: var(--color-primary); }

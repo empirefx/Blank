@@ -528,27 +528,40 @@
     <section class="overview">
       <!-- Primary Color -->
       <div class="overview-color-card">
-        <div class="overview-color-main" style="background:var(--color-primary)">
+        <div class="overview-color-main" style="background:var(--color-primary-base)">
           <span class="overview-label">Primary</span>
         </div>
         <div class="overview-color-shades">
           <div class="overview-color-shade" style="background:var(--color-primary-light)" title="light"></div>
           <div class="overview-color-shade" style="background:var(--color-primary-subtle)" title="subtle"></div>
-          <div class="overview-color-shade" style="background:var(--color-primary)" title="primary"></div>
+          <div class="overview-color-shade" style="background:var(--color-primary-base)" title="primary"></div>
           <div class="overview-color-shade" style="background:var(--color-primary-dark)" title="dark"></div>
         </div>
       </div>
 
       <!-- Secondary Color -->
       <div class="overview-color-card">
-        <div class="overview-color-main" style="background:var(--color-secondary)">
+        <div class="overview-color-main" style="background:var(--color-secondary-base)">
           <span class="overview-label">Secondary</span>
         </div>
         <div class="overview-color-shades">
           <div class="overview-color-shade" style="background:var(--color-secondary-light)" title="light"></div>
           <div class="overview-color-shade" style="background:var(--color-secondary-subtle)" title="subtle"></div>
-          <div class="overview-color-shade" style="background:var(--color-secondary)" title="secondary"></div>
+          <div class="overview-color-shade" style="background:var(--color-secondary-base)" title="secondary"></div>
           <div class="overview-color-shade" style="background:var(--color-secondary-dark)" title="dark"></div>
+        </div>
+      </div>
+
+      <!-- Tertiary Color -->
+      <div class="overview-color-card">
+        <div class="overview-color-main" style="background:var(--color-tertiary)">
+          <span class="overview-label">Tertiary</span>
+        </div>
+        <div class="overview-color-shades">
+          <div class="overview-color-shade" style="background:var(--color-tertiary-light)" title="light"></div>
+          <div class="overview-color-shade" style="background:var(--color-tertiary-subtle)" title="subtle"></div>
+          <div class="overview-color-shade" style="background:var(--color-tertiary-base)" title="tertiary"></div>
+          <div class="overview-color-shade" style="background:var(--color-tertiary-dark)" title="dark"></div>
         </div>
       </div>
 
@@ -588,8 +601,20 @@
         </label>
       </div>
 
+      <!-- Toast -->
+      <div class="overview-item">
+        <div class="overview-isolated" style="width:100%;height:100%;flex-direction:column;gap:var(--space-2)">
+          <div class="toast toast-success" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message" style="font-size:11px">Success!</span>
+          </div>
+          <div class="toast toast-error" style="position:relative;bottom:auto;right:auto">
+            <span class="toast-message" style="font-size:11px">Error!</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Navbar -->
-      <div class="overview-item" style="grid-column:span 2;padding:var(--space-8) var(--space-2);overflow:hidden">
+      <div class="overview-item" style="grid-column:span 3;padding:var(--space-8) var(--space-2);overflow:hidden">
         <span class="overview-label">Navbar</span>
         <nav class="navbar" style="width:100%;border-radius:var(--radius-lg);border-bottom:none;">
           <a href="#" class="navbar-brand">Brand</a>
@@ -612,7 +637,7 @@
       </div>
 
       <!-- Modal -->
-      <div class="overview-item">
+      <div class="overview-item" style="grid-column:span 2;">
         <div class="overview-isolated" style="width:100%;height:100%">
           <div class="modal" style="position:relative;transform:none">
             <div class="modal-header" style="padding:var(--space-3)">
@@ -626,17 +651,6 @@
         </div>
       </div>
 
-      <!-- Toast -->
-      <div class="overview-item">
-        <div class="overview-isolated" style="width:100%;height:100%;flex-direction:column;gap:var(--space-2)">
-          <div class="toast toast-success" style="position:relative;bottom:auto;right:auto">
-            <span class="toast-message" style="font-size:11px">Success!</span>
-          </div>
-          <div class="toast toast-error" style="position:relative;bottom:auto;right:auto">
-            <span class="toast-message" style="font-size:11px">Error!</span>
-          </div>
-        </div>
-      </div>
     </section>
 
     <header class="page-header">
@@ -689,6 +703,26 @@
         <div class="color-swatch">
           <div class="swatch-block" style="background:var(--color-secondary-dark)"></div>
           <figcaption><span class="swatch-name">secondary-dark</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+      </figure>
+
+      <p class="color-group-label">Tertiary</p>
+      <figure class="color-grid">
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-tertiary-light)"></div>
+          <figcaption><span class="swatch-name">tertiary-light</span><span class="swatch-hex">tint</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-tertiary-subtle)"></div>
+          <figcaption><span class="swatch-name">tertiary-subtle</span><span class="swatch-hex">shade</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-tertiary-base)"></div>
+          <figcaption><span class="swatch-name">tertiary</span><span class="swatch-hex">auto</span></figcaption>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block" style="background:var(--color-tertiary-dark)"></div>
+          <figcaption><span class="swatch-name">tertiary-dark</span><span class="swatch-hex">shade</span></figcaption>
         </div>
       </figure>
 
@@ -746,33 +780,65 @@
 
       <p class="color-group-label">Display</p>
       <div class="color-bg-grid">
+        <div class="bg-primary bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-primary</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">primary</span>
+        </div>
         <div class="bg-primary-light bg-card">
           <span class="bg-card-label bg-card-label-light">bg-primary-light</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#5C9BFF</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">tint</span>
+        </div>
+        <div class="bg-primary-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-on-surface)">bg-primary-subtle</span>
+          <span class="bg-card-hex">subtle</span>
+        </div>
+        <div class="bg-secondary bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-secondary</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">secondary</span>
+        </div>
+        <div class="bg-secondary-light bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-secondary-light</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">tint</span>
+        </div>
+        <div class="bg-secondary-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-on-surface)">bg-secondary-subtle</span>
+          <span class="bg-card-hex">subtle</span>
+        </div>
+        <div class="bg-tertiary bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-tertiary</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">tertiary</span>
+        </div>
+        <div class="bg-tertiary-light bg-card">
+          <span class="bg-card-label bg-card-label-light">bg-tertiary-light</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">tint</span>
+        </div>
+        <div class="bg-tertiary-subtle bg-card bg-card-subtle">
+          <span class="bg-card-label" style="color:var(--color-on-surface)">bg-tertiary-subtle</span>
+          <span class="bg-card-hex">subtle</span>
         </div>
         <div class="bg-error bg-card">
           <span class="bg-card-label bg-card-label-light">bg-error</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#E53E3E</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">error</span>
         </div>
         <div class="bg-error-subtle bg-card bg-card-subtle">
           <span class="bg-card-label" style="color:var(--color-error)">bg-error-subtle</span>
-          <span class="bg-card-hex">#FFF5F5</span>
+          <span class="bg-card-hex">subtle</span>
         </div>
         <div class="bg-success bg-card">
           <span class="bg-card-label bg-card-label-light">bg-success</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#38A169</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">success</span>
         </div>
         <div class="bg-success-subtle bg-card bg-card-subtle">
           <span class="bg-card-label" style="color:var(--color-success)">bg-success-subtle</span>
-          <span class="bg-card-hex">#F0FFF4</span>
+          <span class="bg-card-hex">subtle</span>
         </div>
         <div class="bg-warning bg-card">
           <span class="bg-card-label bg-card-label-light">bg-warning</span>
-          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">#D69E2E</span>
+          <span class="bg-card-hex" style="color:rgba(255,255,255,0.7)">warning</span>
         </div>
         <div class="bg-warning-subtle bg-card bg-card-subtle">
           <span class="bg-card-label" style="color:var(--color-warning)">bg-warning-subtle</span>
-          <span class="bg-card-hex">#FFFFF0</span>
+          <span class="bg-card-hex">subtle</span>
         </div>
       </div>
     </section>
