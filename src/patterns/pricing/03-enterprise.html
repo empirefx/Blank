@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+  <div style="width:100%;max-width:520px;display:flex;flex-direction:column;gap:var(--space-5)">
+  <div style="display:flex;gap:var(--space-4)">
+    <div class="card" style="flex:1;padding:var(--space-5);text-align:center;display:flex;flex-direction:column;gap:var(--space-3);border-color:var(--color-primary);border-width:2px">
+      <span style="font-size:var(--font-size-xs);color:var(--color-primary);letter-spacing:var(--letter-spacing-wide)">ENTERPRISE</span>
+      <span style="font-size:var(--font-size-lg);color:var(--color-on-surface-variant)">Custom pricing</span>
+      <hr style="border:none;border-top:var(--border-default)">
+      <ul style="list-style:none;text-align:left;display:flex;flex-direction:column;gap:var(--space-2);font-size:var(--font-size-sm)"><li>✓ Everything in Team</li><li>✓ SSO &amp; SAML</li><li>✓ Custom integrations</li><li>✓ Dedicated account manager</li><li>✓ SLA guarantee</li></ul>
+      <button class="btn btn-primary" style="width:100%;margin-top:auto">Contact Us</button>
+    </div>
+  </div>
+  <div style="text-align:center"><p style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Need a custom plan? <a href="#" style="color:var(--color-primary);text-decoration:none">Talk to our sales team</a></p></div>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

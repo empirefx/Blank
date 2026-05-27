@@ -45,6 +45,9 @@ Single-page design system demo built with OKLCH-based color tokens, M3 color rol
 | `src/index.html` | Single-page demo; inline `<style>` for theme panel & color editor, `<script>` for interactivity |
 | `src/patterns.html` | Standalone patterns page — reusable layout skeletons (auth, search, onboarding, data table, empty state, settings, cart) |
 | `src/pages.html` | Standalone pages page — full page skeletons (dashboard, PDP, pricing, profile, 404, analytics) |
+| `src/display.html` | Variation viewer — reads `?cat=patterns&type=empty-states`, loads each variation file in an `<iframe>` stacked in a column, auto-sizes via `postMessage` |
+| `src/patterns/{type}/*.html` | Standalone variation HTML documents with design system CSS, includes `postMessage` for parent iframe resizing |
+| `src/pages/{type}/*.html` | Same format as pattern variations |
 
 ### Theme Switching
 

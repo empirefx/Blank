@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display — Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/core.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/view.css" />
+  <link rel="stylesheet" href="icons/icons.css" />
+  <style>
+    .display-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-8) var(--space-16);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-10);
+    }
+
+    .variation-section {
+      border: 2px var(--color-surface-container) solid;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .variation-header {
+      padding: var(--space-3) var(--space-6);
+      background: var(--color-surface-container);
+      font-family: var(--font-family-mono);
+      font-size: var(--font-size-sm);
+      color: var(--color-on-surface-variant);
+      letter-spacing: var(--letter-spacing-wide);
+      text-transform: uppercase;
+    }
+
+    .variation-body {
+      padding: 0;
+    }
+    .variation-body iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 13px;
+      font-weight: var(--font-weight-medium);
+      color: var(--color-on-surface-variant);
+      text-decoration: none;
+      margin-bottom: var(--space-2);
+    }
+    .back-link:hover { color: var(--color-on-surface); }
+
+    .loading-dots::after { content: ''; animation: dots 1.5s steps(3, end) infinite; }
+    @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
+
+    @media (max-width: 720px) {
+      .display-container { padding: var(--space-4) var(--space-4) var(--space-8); }
+      .variation-body { padding: var(--space-4); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="view-navbar">
+    <a href="index.html" class="view-navbar-brand">Design System</a>
+    <div class="view-navbar-nav">
+      <a href="index.html" class="view-navbar-link">Components</a>
+      <span class="view-navbar-divider"></span>
+      <a href="patterns.html" class="view-navbar-link">Patterns</a>
+      <span class="view-navbar-divider"></span>
+      <a href="pages.html" class="view-navbar-link">Pages</a>
+    </div>
+  </nav>
+
+  <header class="view-header">
+    <h1 id="display-title"></h1>
+    <p id="display-desc"></p>
+  </header>
+
+  <div class="display-container" id="display-container">
+    <p style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">Loading&hellip;</p>
+  </div>
+
+  <script>
+    var params = new URLSearchParams(location.search);
+    var cat = params.get('cat') || 'patterns';
+    var type = params.get('type');
+
+    var labels = {
+      patterns: {
+        auth: { title: 'Authentication Flow', desc: 'Login, signup, and password recovery screens with form validation states.' },
+        'search-filter': { title: 'Search & Filter', desc: 'Search bars, filter chips, and result display variations.' },
+        onboarding: { title: 'Onboarding Carousel', desc: 'Step-by-step welcome flows with illustrations and call-to-action.' },
+        'data-table': { title: 'Data Table', desc: 'Tabular data views with sorting, pagination, and inline actions.' },
+        'empty-states': { title: 'Empty States', desc: 'Null-slate layouts with guidance text, illustration, and primary actions.' },
+        pricing: { title: 'Pricing', desc: 'Subscription tiers with monthly, annual, and enterprise plan comparisons.' },
+        'product-card': { title: 'Product Card', desc: 'Item showcase with image, rating, price, reviews, and purchase actions.' },
+        checkout: { title: 'Checkout / Cart', desc: 'Purchase flow with cart summary, shipping details, and payment confirmation.' }
+      },
+      pages: {
+        dashboard: { title: 'User Dashboard', desc: 'Personal metrics, activity feeds, and quick-action panels.' },
+        settings: { title: 'Settings', desc: 'Preference panels with sidebar navigation and form controls.' },
+        profile: { title: 'User Profile', desc: 'Personal information editor with avatar, bio, and account settings.' },
+        '404': { title: 'Error Pages', desc: 'Full-screen error layouts for different HTTP error scenarios.' },
+        analytics: { title: 'Analytics Reports', desc: 'Data dashboards with charts, logs, filters, and export controls.' }
+      }
+    };
+
+    var label = (labels[cat] && labels[cat][type]) || { title: type || 'Unknown', desc: '' };
+    document.getElementById('display-title').textContent = label.title;
+    document.getElementById('display-desc').textContent = label.desc;
+
+    var files = {
+      patterns: {
+        auth: [
+          { file: '01-login.html', label: 'Login Form' },
+          { file: '02-signup.html', label: 'Signup Form' },
+          { file: '03-forgot-password.html', label: 'Forgot Password' }
+        ],
+        'search-filter': [
+          { file: '01-basic.html', label: 'Basic Search' },
+          { file: '02-advanced.html', label: 'Advanced Filters' }
+        ],
+        onboarding: [
+          { file: '01-welcome.html', label: 'Welcome Screen' },
+          { file: '02-features.html', label: 'Feature Highlight' },
+          { file: '03-complete.html', label: 'Completion Screen' }
+        ],
+        'data-table': [
+          { file: '01-basic.html', label: 'Basic Table' },
+          { file: '02-paginated.html', label: 'Paginated Table' },
+          { file: '03-actions.html', label: 'Table with Actions' }
+        ],
+        'empty-states': [
+          { file: '01-basic.html', label: 'Basic Empty State' },
+          { file: '02-illustration.html', label: 'With Illustration' },
+          { file: '03-suggestions.html', label: 'With Suggestions' }
+        ],
+        pricing: [
+          { file: '01-monthly.html', label: 'Monthly Tiers' },
+          { file: '02-annual.html', label: 'Annual Tiers' },
+          { file: '03-enterprise.html', label: 'Enterprise Contact' }
+        ],
+        'product-card': [
+          { file: '01-default.html', label: 'Default Card' },
+          { file: '02-with-reviews.html', label: 'With Reviews' },
+          { file: '03-out-of-stock.html', label: 'Out of Stock' }
+        ],
+        checkout: [
+          { file: '01-cart.html', label: 'Cart Summary' },
+          { file: '02-shipping.html', label: 'Shipping Details' },
+          { file: '03-payment.html', label: 'Payment Confirmation' }
+        ]
+      },
+      pages: {
+        dashboard: [
+          { file: '01-overview.html', label: 'Dashboard Overview' },
+          { file: '02-with-data.html', label: 'With Activity Data' },
+          { file: '03-loading.html', label: 'Loading State' }
+        ],
+        settings: [
+          { file: '01-general.html', label: 'General Settings' },
+          { file: '02-security.html', label: 'Security Settings' },
+          { file: '03-notifications.html', label: 'Notification Preferences' }
+        ],
+        profile: [
+          { file: '01-view.html', label: 'Profile View' },
+          { file: '02-edit.html', label: 'Profile Edit' },
+          { file: '03-security.html', label: 'Security Settings' }
+        ],
+        '404': [
+          { file: '01-basic.html', label: '403 Forbidden' },
+          { file: '02-search.html', label: '404 Not Found' },
+          { file: '03-branded.html', label: '500 Server Error' }
+        ],
+        analytics: [
+          { file: '01-overview.html', label: 'Reports Overview' },
+          { file: '02-detailed.html', label: 'Detailed Report' },
+          { file: '03-export.html', label: 'Export View' }
+        ]
+      }
+    };
+
+    var container = document.getElementById('display-container');
+    var list = files[cat] && files[cat][type];
+
+    if (list) {
+      container.innerHTML = '';
+      list.forEach(function(entry) {
+        var section = document.createElement('div');
+        section.className = 'variation-section';
+        var header = document.createElement('div');
+        header.className = 'variation-header';
+        header.textContent = entry.label;
+        var body = document.createElement('div');
+        body.className = 'variation-body';
+        var iframe = document.createElement('iframe');
+        iframe.src = cat + '/' + type + '/' + entry.file;
+        iframe.loading = 'lazy';
+        iframe.style.height = '300px';
+        body.appendChild(iframe);
+        section.appendChild(header);
+        section.appendChild(body);
+        container.appendChild(section);
+      });
+
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'resize') {
+          var frames = container.querySelectorAll('iframe');
+          for (var i = 0; i < frames.length; i++) {
+            if (frames[i].contentWindow === e.source) {
+              frames[i].style.height = e.data.height + 'px';
+              break;
+            }
+          }
+        }
+      });
+    } else {
+      container.innerHTML = '<p style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">' + (type ? 'No variations for this ' + cat.slice(0, -1) + '.' : 'Select a ' + cat.slice(0, -1) + ' from the gallery.') + '</p>';
+    }
+  </script>
+
+</body>
+</html>

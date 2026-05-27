@@ -125,6 +125,8 @@
   color: var(--color-on-surface);
   transition: all var(--transition-base);
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input::placeholder {

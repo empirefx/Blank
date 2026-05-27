@@ -67,21 +67,16 @@
     .sk-empty .skeleton:nth-child(3) { width: 75%; height: 12px; }
     .sk-empty .skeleton:nth-child(4) { width: 140px; height: 36px; border-radius: var(--radius-round); }
 
-    /* Settings Layout Skeleton */
-    .sk-settings { width: 100%; max-width: 420px; display: flex; gap: var(--space-4); }
-    .sk-settings-sidebar { width: 100px; display: flex; flex-direction: column; gap: var(--space-3); }
-    .sk-settings-sidebar .skeleton { height: 12px; border-radius: var(--radius-sm); }
-    .sk-settings-sidebar .skeleton:first-child { width: 80%; }
-    .sk-settings-sidebar .skeleton:nth-child(2) { width: 60%; }
-    .sk-settings-sidebar .skeleton:nth-child(3) { width: 70%; }
-    .sk-settings-main { flex: 1; display: flex; flex-direction: column; gap: var(--space-4); }
-    .sk-settings-main .skeleton { height: 12px; }
-    .sk-settings-main .skeleton:first-child { width: 50%; height: 18px; }
-    .sk-settings-main .skeleton:nth-child(2) { width: 100%; height: 36px; border-radius: var(--radius-md); }
-    .sk-settings-main .skeleton:nth-child(3) { width: 100%; height: 36px; border-radius: var(--radius-md); }
-    .sk-settings-main .skeleton:nth-child(4) { width: 100%; height: 36px; border-radius: var(--radius-md); }
-    .sk-settings-main .skeleton:nth-child(5) { width: 100%; height: 80px; border-radius: var(--radius-md); }
-    .sk-settings-main .skeleton:nth-child(6) { width: 40%; height: 36px; border-radius: var(--radius-md); }
+    /* Pricing Skeleton */
+    .sk-pricing { width: 100%; max-width: 420px; display: flex; gap: var(--space-3); }
+    .sk-pricing-card { flex: 1;  border-radius: var(--radius-lg); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pricing-card .skeleton:first-child { width: 50%; height: 12px; }
+    .sk-pricing-card .skeleton:nth-child(2) { width: 70%; height: 20px; }
+    .sk-pricing-card .skeleton:nth-child(3) { width: 90%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(4) { width: 80%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(5) { width: 60%; height: 8px; }
+    .sk-pricing-card .skeleton:last-child { width: 100%; height: 30px; border-radius: var(--radius-round); margin-top: var(--space-1); }
+    .sk-pricing-card.featured { background: var(--color-on-primary); }
 
     /* Cart Summary Skeleton */
     .sk-cart { width: 280px; display: flex; flex-direction: column; gap: var(--space-3); }
@@ -94,6 +89,19 @@
     .sk-cart-total .skeleton:first-child { width: 50px; }
     .sk-cart-total .skeleton:last-child { width: 60px; }
     .sk-cart .skeleton:last-child { width: 100%; height: 40px; border-radius: var(--radius-md); margin-top: var(--space-1); }
+
+    /* Product Card Skeleton */
+    .sk-pcard { width: 100%; max-width: 380px; display: flex; gap: var(--space-4); }
+    .sk-pcard-image { width: 140px; height: 160px; border-radius: var(--radius-lg); flex: none; }
+    .sk-pcard-info { flex: 1; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pcard-info .skeleton:first-child { width: 70%; height: 16px; }
+    .sk-pcard-info .skeleton:nth-child(2) { width: 40%; height: 12px; }
+    .sk-pcard-info .skeleton:nth-child(3) { width: 90%; height: 10px; }
+    .sk-pcard-info .skeleton:nth-child(4) { width: 85%; height: 10px; }
+    .sk-pcard-info .skeleton:nth-child(5) { width: 50%; height: 10px; }
+    .sk-pcard-stars { display: flex; gap: 4px; }
+    .sk-pcard-stars .skeleton { width: 14px; height: 14px; border-radius: 2px; }
+    .sk-pcard-info .skeleton:last-child { width: 100%; height: 36px; border-radius: var(--radius-md); margin-top: var(--space-1); }
   </style>
 </head>
 <body>
@@ -120,7 +128,7 @@
   <div class="view-grid">
 
     <!-- Authentication Flow -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=auth" class="view-card">
       <div class="view-card-preview">
         <div class="sk-auth">
           <div class="skeleton"></div>
@@ -134,10 +142,10 @@
           <p>The layout structure for login, signup, and forgot-password steps, with form fields and a primary CTA.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- Search & Filter -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=search-filter" class="view-card">
       <div class="view-card-preview">
         <div class="sk-search">
           <div class="skeleton"></div>
@@ -152,10 +160,10 @@
           <p>A combination of an input field, dropdown filters, and tag chips for narrowing results.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- Onboarding Carousel -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=onboarding" class="view-card">
       <div class="view-card-preview">
         <div class="sk-onboard">
           <div class="sk-onboard-text">
@@ -173,10 +181,10 @@
           <p>A step-by-step wizard pattern with illustration, headline, dot indicators, and "Next" / "Skip" actions.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- Data Table with Pagination -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=data-table" class="view-card">
       <div class="view-card-preview">
         <div class="sk-table">
           <div class="sk-table-head">
@@ -203,10 +211,10 @@
           <p>A complex pattern combining data rows, selection checkboxes, and page navigation controls.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- Empty States -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=empty-states" class="view-card">
       <div class="view-card-preview">
         <div class="sk-empty">
           <div class="skeleton"></div>
@@ -219,18 +227,29 @@
           <p>The standardized layout with illustration, headline, supporting text, and a primary action button used when no data exists.</p>
         </div>
       </div>
-    </div>
+    </a>
 
-    <!-- Settings Layout -->
-    <div class="view-card">
+    <!-- Pricing -->
+    <a href="display.html?cat=patterns&amp;type=pricing" class="view-card">
       <div class="view-card-preview">
-        <div class="sk-settings">
-          <div class="sk-settings-sidebar">
+        <div class="sk-pricing">
+          <div class="sk-pricing-card">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
             <div class="skeleton"></div>
             <div class="skeleton"></div>
             <div class="skeleton"></div>
           </div>
-          <div class="sk-settings-main">
+          <div class="sk-pricing-card featured">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="sk-pricing-card">
             <div class="skeleton"></div>
             <div class="skeleton"></div>
             <div class="skeleton"></div>
@@ -240,14 +259,42 @@
           </div>
         </div>
         <div class="view-card-body">
-          <h3>Settings Layout</h3>
-          <p>A standard split-pane pattern with sidebar navigation on the left and form inputs on the right.</p>
+          <h3>Pricing</h3>
+          <p>Subscription tier cards with feature lists, pricing, and call-to-action buttons.</p>
         </div>
       </div>
-    </div>
+    </a>
+
+    <!-- Product Card -->
+    <a href="display.html?cat=patterns&amp;type=product-card" class="view-card">
+      <div class="view-card-preview">
+        <div class="sk-pcard">
+          <div class="skeleton sk-pcard-image"></div>
+          <div class="sk-pcard-info">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="sk-pcard-stars">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+        <div class="view-card-body">
+          <h3>Product Card</h3>
+          <p>Product showcase with image placeholder, star rating, description lines, and a CTA button.</p>
+        </div>
+      </div>
+    </a>
 
     <!-- Checkout / Cart Summary -->
-    <div class="view-card">
+    <a href="display.html?cat=patterns&amp;type=checkout" class="view-card">
       <div class="view-card-preview">
         <div class="sk-cart">
           <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
@@ -261,7 +308,7 @@
           <p>A persistent summary block pattern with line items, totals, and a primary CTA used across purchasing steps.</p>
         </div>
       </div>
-    </div>
+    </a>
 
   </div>
 

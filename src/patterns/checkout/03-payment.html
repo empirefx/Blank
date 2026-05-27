@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+<div style="width:380px;display:flex;flex-direction:column;gap:var(--space-4);text-align:center;padding:var(--space-4)">
+  <div style="width:80px;height:80px;border-radius:50%;background:var(--color-surface-container);margin:0 auto"></div>
+  <h3 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular)">Order Confirmed</h3>
+  <p style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Your order #DS-2026-0421 has been placed. A confirmation email will be sent to jane@example.com.</p>
+  <div class="card" style="padding:var(--space-4);text-align:left;width:100%">
+    <div style="display:flex;justify-content:space-between"><span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Order</span><span style="font-size:var(--font-size-sm)">#DS-2026-0421</span></div>
+    <div style="display:flex;justify-content:space-between;margin-top:var(--space-2)"><span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Total</span><span style="font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold)">$197.00</span></div>
+    <div style="display:flex;justify-content:space-between;margin-top:var(--space-2)"><span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Delivery</span><span style="font-size:var(--font-size-sm)">3–5 business days</span></div>
+  </div>
+  <button class="btn btn-primary" style="width:100%">View Order Details</button>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

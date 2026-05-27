@@ -2,7 +2,7 @@
 
 body {
   font-family: var(--font-family-body);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-light);
   color: var(--color-on-surface);
   min-height: 100vh;
 }
@@ -13,8 +13,7 @@ body {
   justify-content: space-between;
   height: 64px;
   padding: 0 var(--space-8);
-  background-color: var(--color-surface-container-lowest);
-  border-bottom: var(--border-default);
+  background-color: var(--color-surface);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -93,6 +92,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--space-6);
 }
+
+a.view-card { text-decoration: none; color: inherit; display: block; }
 
 .view-card {
   background-color: var(--color-surface);

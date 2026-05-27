@@ -23,29 +23,23 @@
     .sk-dashboard-list .skeleton:nth-child(3) { width: 55%; }
     .sk-dashboard-list .skeleton:nth-child(4) { width: 80%; }
 
-    /* Product Detail Page Skeleton */
-    .sk-pdp { width: 100%; max-width: 380px; display: flex; gap: var(--space-4); }
-    .sk-pdp-image { width: 140px; height: 160px; border-radius: var(--radius-lg); flex: none; }
-    .sk-pdp-info { flex: 1; display: flex; flex-direction: column; gap: var(--space-2); }
-    .sk-pdp-info .skeleton:first-child { width: 70%; height: 18px; }
-    .sk-pdp-info .skeleton:nth-child(2) { width: 40%; height: 14px; }
-    .sk-pdp-info .skeleton:nth-child(3) { width: 90%; height: 10px; }
-    .sk-pdp-info .skeleton:nth-child(4) { width: 85%; height: 10px; }
-    .sk-pdp-info .skeleton:nth-child(5) { width: 50%; height: 10px; }
-    .sk-pdp-stars { display: flex; gap: 4px; }
-    .sk-pdp-stars .skeleton { width: 14px; height: 14px; border-radius: 2px; }
-    .sk-pdp-info .skeleton:last-child { width: 100%; height: 36px; border-radius: var(--radius-md); margin-top: var(--space-1); }
 
-    /* Pricing Page Skeleton */
-    .sk-pricing { width: 100%; max-width: 420px; display: flex; gap: var(--space-3); }
-    .sk-pricing-card { flex: 1;  border-radius: var(--radius-lg); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
-    .sk-pricing-card .skeleton:first-child { width: 50%; height: 12px; }
-    .sk-pricing-card .skeleton:nth-child(2) { width: 70%; height: 20px; }
-    .sk-pricing-card .skeleton:nth-child(3) { width: 90%; height: 8px; }
-    .sk-pricing-card .skeleton:nth-child(4) { width: 80%; height: 8px; }
-    .sk-pricing-card .skeleton:nth-child(5) { width: 60%; height: 8px; }
-    .sk-pricing-card .skeleton:last-child { width: 100%; height: 30px; border-radius: var(--radius-round); margin-top: var(--space-1); }
-    .sk-pricing-card.featured { background: var(--color-on-primary); }
+
+    /* Settings Skeleton */
+    .sk-settings { width: 100%; max-width: 420px; display: flex; gap: var(--space-4); }
+    .sk-settings-sidebar { width: 100px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-settings-sidebar .skeleton { height: 12px; border-radius: var(--radius-sm); }
+    .sk-settings-sidebar .skeleton:first-child { width: 80%; }
+    .sk-settings-sidebar .skeleton:nth-child(2) { width: 60%; }
+    .sk-settings-sidebar .skeleton:nth-child(3) { width: 70%; }
+    .sk-settings-main { flex: 1; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sk-settings-main .skeleton { height: 12px; }
+    .sk-settings-main .skeleton:first-child { width: 50%; height: 18px; }
+    .sk-settings-main .skeleton:nth-child(2) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(3) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(4) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(5) { width: 100%; height: 80px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(6) { width: 40%; height: 36px; border-radius: var(--radius-md); }
 
     /* User Profile Skeleton */
     .sk-profile { width: 280px; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
@@ -98,7 +92,7 @@
   <div class="view-grid">
 
     <!-- User Dashboard -->
-    <div class="view-card">
+    <a href="display.html?cat=pages&amp;type=dashboard" class="view-card">
       <div class="view-card-preview">
         <div class="sk-dashboard">
           <div class="sk-dashboard-metrics">
@@ -119,57 +113,20 @@
           <p>The landing screen containing the user's specific metrics, recent activity, and quick actions.</p>
         </div>
       </div>
-    </div>
+    </a>
 
-    <!-- Product Detail Page -->
-    <div class="view-card">
-      <div class="view-card-preview">
-        <div class="sk-pdp">
-          <div class="skeleton sk-pdp-image"></div>
-          <div class="sk-pdp-info">
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="sk-pdp-stars">
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-            </div>
-            <div class="skeleton"></div>
-          </div>
-        </div>
-        <div class="view-card-body">
-          <h3>Product Detail Page (PDP)</h3>
-          <p>The specific page for an item, rendering product images, reviews, and pricing.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Pricing Page -->
-    <div class="view-card">
+
+    <!-- Settings -->
+    <a href="display.html?cat=pages&amp;type=settings" class="view-card">
       <div class="view-card-preview">
-        <div class="sk-pricing">
-          <div class="sk-pricing-card">
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-          </div>
-          <div class="sk-pricing-card featured">
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
-            <div class="skeleton"></div>
+        <div class="sk-settings">
+          <div class="sk-settings-sidebar">
             <div class="skeleton"></div>
             <div class="skeleton"></div>
             <div class="skeleton"></div>
           </div>
-          <div class="sk-pricing-card">
+          <div class="sk-settings-main">
             <div class="skeleton"></div>
             <div class="skeleton"></div>
             <div class="skeleton"></div>
@@ -179,14 +136,14 @@
           </div>
         </div>
         <div class="view-card-body">
-          <h3>Pricing Page</h3>
-          <p>The public-facing page showcasing subscription tiers, feature tables, and FAQs.</p>
+          <h3>Settings</h3>
+          <p>Preference panels with sidebar navigation and form controls across general, security, and notifications tabs.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- User Profile Page -->
-    <div class="view-card">
+    <a href="display.html?cat=pages&amp;type=profile" class="view-card">
       <div class="view-card-preview">
         <div class="sk-profile">
           <div class="skeleton sk-profile-avatar"></div>
@@ -206,10 +163,10 @@
           <p>The screen where an individual edits their personal bio, email, and avatar.</p>
         </div>
       </div>
-    </div>
+    </a>
 
-    <!-- 404 Error Page -->
-    <div class="view-card">
+    <!-- Error Pages -->
+    <a href="display.html?cat=pages&amp;type=404" class="view-card">
       <div class="view-card-preview">
         <div class="sk-error">
           <div class="sk-error-404">404</div>
@@ -217,14 +174,14 @@
           <div class="skeleton"></div>
         </div>
         <div class="view-card-body">
-          <h3>404 Error Page</h3>
-          <p>A standalone full-screen layout handling a broken link destination.</p>
+          <h3>Error Pages</h3>
+          <p>Full-screen error layouts for different HTTP error scenarios.</p>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- Analytics Reports Screen -->
-    <div class="view-card">
+    <a href="display.html?cat=pages&amp;type=analytics" class="view-card">
       <div class="view-card-preview">
         <div class="sk-analytics">
           <div class="sk-analytics-filters">
@@ -252,7 +209,7 @@
           <p>A data-heavy page displaying specific charts, logs, and export options.</p>
         </div>
       </div>
-    </div>
+    </a>
 
   </div>
 

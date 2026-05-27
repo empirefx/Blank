@@ -30,6 +30,7 @@ Open `src/index.html` in any modern browser. No build step required.
 | `src/icons/icons.css` | SVG icon classes |
 | `src/patterns.html` | Pattern layout skeletons |
 | `src/pages.html` | Full page skeletons |
+| `src/display.html` | Variation viewer for live demos |
 | `Design System.md` | Full design system reference |
 
 ## Browser Support

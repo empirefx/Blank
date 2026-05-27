@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+<div style="width:420px;display:flex;flex-direction:column;gap:var(--space-4)">
+  <div style="display:flex;gap:var(--space-3)">
+    <input class="input" placeholder="Search…" style="flex:1;border-radius:var(--radius-round)" />
+    <select class="input" style="width:120px"><option>Category</option><option>Electronics</option><option>Clothing</option></select>
+  </div>
+  <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+    <span class="badge badge-primary">In Stock <span style="cursor:pointer;margin-left:4px">✕</span></span>
+    <span class="badge badge-primary">Under $50 <span style="cursor:pointer;margin-left:4px">✕</span></span>
+    <span class="badge badge-primary">4★ &amp; up <span style="cursor:pointer;margin-left:4px">✕</span></span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">12 results</span>
+    <select class="input" style="width:140px"><option>Sort: Best Match</option><option>Price: Low</option><option>Price: High</option></select>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+    <div class="card" style="padding:var(--space-4);display:flex;gap:var(--space-4);align-items:center">
+      <div style="width:56px;height:56px;border-radius:var(--radius-md);background:var(--color-surface-variant);flex:none"></div>
+      <div><p style="font-size:var(--font-size-sm)"><strong>Bluetooth Speaker</strong></p><span class="badge badge-success">In Stock</span></div>
+      <span style="margin-left:auto;font-weight:var(--font-weight-semibold)">$39.99</span>
+    </div>
+  </div>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

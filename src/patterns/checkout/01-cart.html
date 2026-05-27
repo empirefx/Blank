@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+<div style="width:340px;display:flex;flex-direction:column;gap:var(--space-4)">
+  <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+    <div style="display:flex;gap:var(--space-3);align-items:center"><div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--color-surface-variant);flex:none"></div><div style="flex:1"><p style="font-size:var(--font-size-sm)"><strong>Canvas Sneakers</strong></p><span style="font-size:var(--font-size-xs);color:var(--color-on-surface-variant)">Qty: 1</span></div><span style="font-weight:var(--font-weight-semibold)">$65</span></div>
+    <div style="display:flex;gap:var(--space-3);align-items:center"><div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--color-surface-variant);flex:none"></div><div style="flex:1"><p style="font-size:var(--font-size-sm)"><strong>Denim Jacket</strong></p><span style="font-size:var(--font-size-xs);color:var(--color-on-surface-variant)">Qty: 1</span></div><span style="font-weight:var(--font-weight-semibold)">$120</span></div>
+  </div>
+  <hr style="border:none;border-top:var(--border-default);margin:0" />
+  <div style="display:flex;justify-content:space-between"><span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Subtotal</span><span style="font-size:var(--font-size-sm)">$185</span></div>
+  <div style="display:flex;justify-content:space-between"><span style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Shipping</span><span style="font-size:var(--font-size-sm)">$12</span></div>
+  <div style="display:flex;justify-content:space-between;font-weight:var(--font-weight-semibold)"><span>Total</span><span>$197</span></div>
+  <button class="btn btn-primary" style="width:100%">Checkout</button>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

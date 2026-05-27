@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+  <div style="width:100%;max-width:520px;display:flex;flex-direction:column;gap:var(--space-5)">
+  <div style="display:flex;gap:var(--space-5)">
+    <div style="width:160px;height:180px;border-radius:var(--radius-xl);background:var(--color-surface-variant);flex:none"></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:var(--space-2)">
+      <h3 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular)">Wool Blend Blazer</h3>
+      <span style="font-size:var(--font-size-lg);font-weight:var(--font-weight-semibold);color:var(--color-primary)">$195.00</span>
+      <p style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant)">Tailored fit, two-button closure, interior pockets.</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+  <hr style="border:none;border-top:var(--border-default)" />
+  <div><h4 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular);margin-bottom:var(--space-3)">Reviews</h4></div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+    <div class="card" style="padding:var(--space-3)"><div style="display:flex;gap:var(--space-2);align-items:center;margin-bottom:var(--space-1)"><div style="width:24px;height:24px;border-radius:50%;background:var(--color-primary-container);font-size:var(--font-size-xs);display:flex;align-items:center;justify-content:center">SK</div><span style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium)">Sarah K.</span><span style="font-size:var(--font-size-xs);color:var(--color-warning)">★★★★☆</span></div><p style="font-size:var(--font-size-xs);color:var(--color-on-surface-variant)">Great quality, runs slightly large. Would recommend sizing down.</p></div>
+    <div class="card" style="padding:var(--space-3)"><div style="display:flex;gap:var(--space-2);align-items:center;margin-bottom:var(--space-1)"><div style="width:24px;height:24px;border-radius:50%;background:var(--color-surface-variant);font-size:var(--font-size-xs);display:flex;align-items:center;justify-content:center">JM</div><span style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium)">James M.</span><span style="font-size:var(--font-size-xs);color:var(--color-warning)">★★★★★</span></div><p style="font-size:var(--font-size-xs);color:var(--color-on-surface-variant)">Perfect fit and the material is fantastic. My new favorite blazer.</p></div>
+  </div>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

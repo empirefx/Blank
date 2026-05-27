@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%;;display:flex;flex-direction:column;gap:var(--space-2)">
+  <div style="display:flex;gap:var(--space-3);padding-bottom:var(--space-2)">
+    <span style="flex:2;font-size:var(--font-size-xs);color:var(--color-on-surface-variant);letter-spacing:var(--letter-spacing-wide)">Item</span>
+    <span style="flex:1;font-size:var(--font-size-xs);color:var(--color-on-surface-variant);letter-spacing:var(--letter-spacing-wide)">Qty</span>
+    <span style="width:80px;font-size:var(--font-size-xs);color:var(--color-on-surface-variant);letter-spacing:var(--letter-spacing-wide)">Actions</span>
+  </div>
+  <hr style="border:none;border-top:var(--border-default);margin:0" />
+  <div style="display:flex;gap:var(--space-3);align-items:center;padding:var(--space-2) 0"><span style="flex:2;font-size:var(--font-size-sm)">Wireless Mouse</span><span style="flex:1;font-size:var(--font-size-sm)">3</span><span style="width:80px"><button class="btn btn-secondary" style="padding:var(--space-1) var(--space-2);font-size:var(--font-size-xs)">Edit</button></span></div>
+  <div style="display:flex;gap:var(--space-3);align-items:center;padding:var(--space-2) 0"><span style="flex:2;font-size:var(--font-size-sm)">USB-C Hub</span><span style="flex:1;font-size:var(--font-size-sm)">1</span><span style="width:80px"><button class="btn btn-secondary" style="padding:var(--space-1) var(--space-2);font-size:var(--font-size-xs)">Edit</button></span></div>
+  <div style="display:flex;gap:var(--space-3);align-items:center;padding:var(--space-2) 0"><span style="flex:2;font-size:var(--font-size-sm)">Desk Lamp</span><span style="flex:1;font-size:var(--font-size-sm)">2</span><span style="width:80px"><button class="btn btn-secondary" style="padding:var(--space-1) var(--space-2);font-size:var(--font-size-xs)">Edit</button></span></div>
+  <div style="display:flex;gap:var(--space-3);align-items:center;padding:var(--space-2) 0"><span style="flex:2;font-size:var(--font-size-sm)">Laptop Stand</span><span style="flex:1;font-size:var(--font-size-sm)">1</span><span style="width:80px"><button class="btn btn-secondary" style="padding:var(--space-1) var(--space-2);font-size:var(--font-size-xs)">Edit</button></span></div>
+  <div style="display:flex;gap:var(--space-3);align-items:center;padding:var(--space-2) 0"><span style="flex:2;font-size:var(--font-size-sm)">Mechanical Keyboard</span><span style="flex:1;font-size:var(--font-size-sm)">5</span><span style="width:80px"><button class="btn btn-secondary" style="padding:var(--space-1) var(--space-2);font-size:var(--font-size-xs)">Edit</button></span></div>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

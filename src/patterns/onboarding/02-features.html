@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: var(--font-family-body);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+<div style="width:300px;display:flex;flex-direction:column;align-items:center;gap:var(--space-6);text-align:center">
+  <div style="width:160px;height:140px;border-radius:var(--radius-xl);background:var(--color-primary-container)"></div>
+  <div><h3 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular)">Live Color Editing</h3><p style="font-size:var(--font-size-sm);color:var(--color-on-surface-variant);margin-top:var(--space-2)">All tokens auto-compute from base colors — change one, everything updates.</p></div>
+  <div style="display:flex;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-surface-container)"></span><span style="width:24px;height:6px;border-radius:3px;background:var(--color-primary)"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--color-surface-container)"></span></div>
+  <div style="display:flex;gap:var(--space-3);width:100%"><button class="btn btn-secondary" style="flex:1">Skip</button><button class="btn btn-primary" style="flex:1">Next</button></div>
+</div>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>

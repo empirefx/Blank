@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/core.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <style></style>
+</head>
+<body style="margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:var(--font-family-body);background:var(--color-surface);color:var(--color-on-surface)">
+  <nav style="display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-8);border-bottom:var(--border-default);background:var(--color-surface)">
+    <a href="../../index.html" style="font-family:var(--font-family-display);font-weight:var(--font-weight-semibold);color:var(--color-on-surface);text-decoration:none;font-size:var(--font-size-lg)">Design System</a>
+    <div style="display:flex;gap:var(--space-1);margin-left:var(--space-6)">
+      <a href="#" class="btn btn-ghost" style="padding:var(--space-2) var(--space-3);font-size:var(--font-size-sm)">Home</a>
+      <a href="#" class="btn btn-ghost" style="padding:var(--space-2) var(--space-3);font-size:var(--font-size-sm)">Product</a>
+      <a href="#" class="btn btn-ghost" style="padding:var(--space-2) var(--space-3);font-size:var(--font-size-sm)">Sales</a>
+      <a href="#" class="btn btn-ghost" style="padding:var(--space-2) var(--space-3);font-size:var(--font-size-sm)">Contact</a>
+      <a href="#" class="btn btn-ghost" style="padding:var(--space-2) var(--space-3);font-size:var(--font-size-sm)">About Us</a>
+    </div>
+    <div style="margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--color-surface-variant)"></div>
+  </nav>
+  
+  <main style="flex:1;padding:var(--space-10);max-width:1200px;width:100%;margin:0 auto;box-sizing:border-box">
+    <div style="display:flex;flex-direction:column;gap:var(--space-6)">
+  <h2 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular);margin:0">Notifications</h2>
+  <div class="card" style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)">
+    <label class="checkbox-wrapper" style="justify-content:space-between"><span style="font-size:var(--font-size-sm)">Email digests</span><input type="checkbox" class="checkbox" checked /></label>
+    <label class="checkbox-wrapper" style="justify-content:space-between"><span style="font-size:var(--font-size-sm)">Push notifications</span><input type="checkbox" class="checkbox" checked /></label>
+    <label class="checkbox-wrapper" style="justify-content:space-between"><span style="font-size:var(--font-size-sm)">SMS alerts</span><input type="checkbox" class="checkbox" /></label>
+    <label class="checkbox-wrapper" style="justify-content:space-between"><span style="font-size:var(--font-size-sm)">Weekly reports</span><input type="checkbox" class="checkbox" checked /></label>
+    <button class="btn btn-primary" style="align-self:flex-start">Save Preferences</button>
+  </div>
+</div>
+  </main>
+  
+  <footer style="border-top:var(--border-default);padding:var(--space-4) var(--space-6);display:flex;justify-content:space-between;font-size:var(--font-size-xs);color:var(--color-on-surface-variant)">
+    <span>© 2026 Design System Demo</span>
+    <span style="display:flex;gap:var(--space-3)"><a href="../../index.html" style="color:var(--color-primary);text-decoration:none">Home</a><a href="../../patterns.html" style="color:var(--color-primary);text-decoration:none">Patterns</a><a href="#" style="color:var(--color-primary);text-decoration:none">GitHub</a></span>
+  </footer>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+</body>
+</html>
