@@ -31,6 +31,6 @@
   <div style="display:flex;justify-content:space-between;font-weight:var(--font-weight-semibold)"><span>Total</span><span>$197</span></div>
   <button class="btn btn-primary" style="width:100%">Checkout</button>
 </div>
-<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')document.documentElement.setAttribute('data-theme',e.data.theme)})</script>
 </body>
 </html>

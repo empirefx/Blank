@@ -75,12 +75,20 @@
 
   <nav class="view-navbar">
     <a href="index.html" class="view-navbar-brand">Design System</a>
-    <div class="view-navbar-nav">
-      <a href="index.html" class="view-navbar-link">Components</a>
-      <span class="view-navbar-divider"></span>
-      <a href="patterns.html" class="view-navbar-link">Patterns</a>
-      <span class="view-navbar-divider"></span>
-      <a href="pages.html" class="view-navbar-link active">Pages</a>
+    <div class="view-navbar-nav-wrapper">
+      <div class="view-navbar-nav">
+        <a href="index.html" class="view-navbar-link">Components</a>
+        <span class="view-navbar-divider"></span>
+        <a href="patterns.html" class="view-navbar-link">Patterns</a>
+        <span class="view-navbar-divider"></span>
+        <a href="pages.html" class="view-navbar-link active">Pages</a>
+      </div>
+    </div>
+    <div class="view-navbar-actions">
+      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle theme">
+        <i class="solar--sun-2-line-duotone"></i>
+        <i class="solar--moon-stars-line-duotone"></i>
+      </button>
     </div>
   </nav>
 
@@ -213,5 +221,6 @@
 
   </div>
 
+<script>(function(){var b=document.getElementById('theme-toggle'),h=document.documentElement,s=localStorage.getItem('theme');if(s)h.setAttribute('data-theme',s);b.addEventListener('click',function(){var n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n)})})();</script>
 </body>
 </html>

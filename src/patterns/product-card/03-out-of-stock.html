@@ -20,7 +20,7 @@
   </style>
 </head>
 <body>
-  <div style="width:100%;;display:flex;gap:var(--space-5)">
+  <div style="width:100%;display:flex;gap:var(--space-5)">
   <div style="width:160px;height:180px;border-radius:var(--radius-xl);background:var(--color-surface-variant);flex:none;opacity:0.5"></div>
   <div style="flex:1;display:flex;flex-direction:column;gap:var(--space-2)">
     <h3 style="font-family:var(--font-family-display);font-weight:var(--font-weight-regular)">Limited Edition Watch</h3>
@@ -30,6 +30,6 @@
     <div style="display:flex;gap:var(--space-2)"><input class="input" placeholder="your@email.com" style="flex:1" /><button class="btn btn-secondary">Notify Me</button></div>
   </div>
 </div>
-<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')document.documentElement.setAttribute('data-theme',e.data.theme)})</script>
 </body>
 </html>

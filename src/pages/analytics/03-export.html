@@ -42,6 +42,6 @@
     <span>© 2026 Design System Demo</span>
     <span style="display:flex;gap:var(--space-3)"><a href="../../index.html" style="color:var(--color-primary);text-decoration:none">Home</a><a href="../../patterns.html" style="color:var(--color-primary);text-decoration:none">Patterns</a><a href="#" style="color:var(--color-primary);text-decoration:none">GitHub</a></span>
   </footer>
-<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});</script>
+<script>window.addEventListener('load',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('resize',function(){parent.postMessage({type:'resize',height:document.documentElement.scrollHeight},'*')});window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')document.documentElement.setAttribute('data-theme',e.data.theme)})</script>
 </body>
 </html>
