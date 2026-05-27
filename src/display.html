@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Display — Design System</title>
+  <title>Patterns &amp; Pages — Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/core.css" />
   <link rel="stylesheet" href="styles/components.css" />
-  <link rel="stylesheet" href="styles/view.css" />
   <link rel="stylesheet" href="icons/icons.css" />
+  <link rel="stylesheet" href="styles/view.css" />
   <style>
+    .gallery-section {
+      scroll-margin-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-8) var(--space-2);
+      font-family: var(--font-family-display);
+      font-size: var(--font-size-2xl);
+      letter-spacing: var(--letter-spacing-tight);
+      border-top: 1px var(--color-surface-variant) solid;
+    }
+    .gallery-section:first-of-type { border-top: none; }
+
     .display-container {
       max-width: 960px;
       margin: 0 auto;
@@ -19,13 +31,11 @@
       flex-direction: column;
       gap: var(--space-10);
     }
-
     .variation-section {
       border: 2px var(--color-surface-container) solid;
       border-radius: var(--radius-xl);
       overflow: hidden;
     }
-
     .variation-header {
       padding: var(--space-3) var(--space-6);
       background: var(--color-surface-container);
@@ -35,15 +45,8 @@
       letter-spacing: var(--letter-spacing-wide);
       text-transform: uppercase;
     }
-
-    .variation-body {
-      padding: 0;
-    }
-    .variation-body iframe {
-      width: 100%;
-      border: none;
-      display: block;
-    }
+    .variation-body { padding: 0; }
+    .variation-body iframe { width: 100%; border: none; display: block; }
 
     .back-link {
       display: inline-flex;
@@ -60,9 +63,128 @@
     .loading-dots::after { content: ''; animation: dots 1.5s steps(3, end) infinite; }
     @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
 
+    /* ── Pattern skeletons ─────────────────────────────── */
+    .sk-auth { width: 280px; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sk-auth .skeleton { height: 14px; }
+    .sk-auth .skeleton:first-child { width: 40%; }
+    .sk-auth .skeleton:nth-child(2) { width: 100%; height: 42px; border-radius: var(--radius-md); }
+    .sk-auth .skeleton:nth-child(3) { width: 35%; }
+    .sk-auth .skeleton:nth-child(4) { width: 100%; height: 42px; border-radius: var(--radius-md); }
+    .sk-auth .skeleton:last-child { width: 100%; height: 40px; border-radius: var(--radius-md); margin-top: var(--space-2); }
+    .sk-search { width: 360px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-search-row { display: flex; gap: var(--space-2); }
+    .sk-search .skeleton:first-child { width: 100%; height: 40px; border-radius: var(--radius-round); }
+    .sk-search-row .skeleton { height: 28px; border-radius: var(--radius-round); flex: 1; }
+    .sk-search-row .skeleton:first-child { width: 60px; flex: none; }
+    .sk-search-row .skeleton:nth-child(2) { width: 80px; flex: none; }
+    .sk-search-row .skeleton:nth-child(3) { width: 70px; flex: none; }
+    .sk-onboard { width: 240px; display: flex; flex-direction: column; gap: var(--space-5); }
+    .sk-onboard .skeleton:first-child { width: 100%; height: 60px; border-radius: var(--radius-md); }
+    .sk-onboard-text { display: flex; flex-direction: column; gap: var(--space-1); }
+    .sk-onboard-text .skeleton:first-child { width: 60%; height: 14px; }
+    .sk-onboard-text .skeleton:nth-child(2) { width: 90%; height: 10px; }
+    .sk-onboard-text .skeleton:nth-child(3) { width: 40%; height: 10px; }
+    .sk-onboard-footer { display: flex; align-items: center; gap: var(--space-10); }
+    .sk-onboard .sk-onboard-footer .skeleton { flex: 1; width: 20px; height: 34px; border-radius: var(--radius-round); }
+    .sk-table { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-table-head { display: flex; gap: var(--space-3); padding-bottom: var(--space-2); }
+    .sk-table-head .skeleton { height: 14px; flex: 1; }
+    .sk-table-head .skeleton:first-child { flex: 2; }
+    .sk-table-row { display: flex; gap: var(--space-3); align-items: center; }
+    .sk-table-row .skeleton { height: 10px; flex: 1; }
+    .sk-table-row .skeleton:first-child { flex: 2; }
+    .sk-table-row .skeleton:last-child { width: 16px; height: 16px; border-radius: var(--radius-sm); flex: none; }
+    .sk-table-pagination { display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-3); }
+    .sk-table-pagination .skeleton { width: 28px; height: 28px; border-radius: var(--radius-sm); }
+    .sk-empty { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+    .sk-empty .skeleton:first-child { width: 100px; height: 100px; border-radius: 50%; }
+    .sk-empty .skeleton:nth-child(2) { width: 55%; height: 18px; }
+    .sk-empty .skeleton:nth-child(3) { width: 75%; height: 12px; }
+    .sk-empty .skeleton:nth-child(4) { width: 140px; height: 36px; border-radius: var(--radius-round); }
+    .sk-pricing { width: 100%; max-width: 420px; display: flex; gap: var(--space-3); }
+    .sk-pricing-card { flex: 1; border-radius: var(--radius-lg); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pricing-card .skeleton:first-child { width: 50%; height: 12px; }
+    .sk-pricing-card .skeleton:nth-child(2) { width: 70%; height: 20px; }
+    .sk-pricing-card .skeleton:nth-child(3) { width: 90%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(4) { width: 80%; height: 8px; }
+    .sk-pricing-card .skeleton:nth-child(5) { width: 60%; height: 8px; }
+    .sk-pricing-card .skeleton:last-child { width: 100%; height: 30px; border-radius: var(--radius-round); margin-top: var(--space-1); }
+    .sk-pricing-card.featured { background: var(--color-on-primary); }
+    .sk-cart { width: 280px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-cart-item { display: flex; gap: var(--space-3); align-items: center; }
+    .sk-cart-item .skeleton:first-child { width: 48px; height: 48px; border-radius: var(--radius-md); flex: none; }
+    .sk-cart-item .skeleton:nth-child(2) { flex: 1; height: 12px; }
+    .sk-cart-item .skeleton:nth-child(3) { width: 40px; height: 12px; flex: none; }
+    .sk-cart-total { display: flex; justify-content: space-between; }
+    .sk-cart-total .skeleton { height: 14px; }
+    .sk-cart-total .skeleton:first-child { width: 50px; }
+    .sk-cart-total .skeleton:last-child { width: 60px; }
+    .sk-cart .skeleton:last-child { width: 100%; height: 40px; border-radius: var(--radius-md); margin-top: var(--space-1); }
+    .sk-pcard { width: 100%; max-width: 380px; display: flex; gap: var(--space-4); }
+    .sk-pcard-image { width: 140px; height: 160px; border-radius: var(--radius-lg); flex: none; }
+    .sk-pcard-info { flex: 1; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-pcard-info .skeleton:first-child { width: 70%; height: 16px; }
+    .sk-pcard-info .skeleton:nth-child(2) { width: 40%; height: 12px; }
+    .sk-pcard-info .skeleton:nth-child(3) { width: 90%; height: 10px; }
+    .sk-pcard-info .skeleton:nth-child(4) { width: 85%; height: 10px; }
+    .sk-pcard-info .skeleton:nth-child(5) { width: 50%; height: 10px; }
+    .sk-pcard-stars { display: flex; gap: 4px; }
+    .sk-pcard-stars .skeleton { width: 14px; height: 14px; border-radius: 2px; }
+    .sk-pcard-info .skeleton:last-child { width: 100%; height: 36px; border-radius: var(--radius-md); margin-top: var(--space-1); }
+
+    /* ── Page skeletons ────────────────────────────────── */
+    .sk-dashboard { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sk-dashboard-metrics { display: flex; gap: var(--space-3); }
+    .sk-dashboard-metrics .skeleton { flex: 1; height: 60px; border-radius: var(--radius-md); }
+    .sk-dashboard-chart { width: 100%; height: 80px; border-radius: var(--radius-md); }
+    .sk-dashboard-list { display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-dashboard-list .skeleton { height: 12px; }
+    .sk-dashboard-list .skeleton:first-child { width: 40%; }
+    .sk-dashboard-list .skeleton:nth-child(2) { width: 70%; }
+    .sk-dashboard-list .skeleton:nth-child(3) { width: 55%; }
+    .sk-dashboard-list .skeleton:nth-child(4) { width: 80%; }
+    .sk-settings { width: 100%; max-width: 420px; display: flex; gap: var(--space-4); }
+    .sk-settings-sidebar { width: 100px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-settings-sidebar .skeleton { height: 12px; border-radius: var(--radius-sm); }
+    .sk-settings-sidebar .skeleton:first-child { width: 80%; }
+    .sk-settings-sidebar .skeleton:nth-child(2) { width: 60%; }
+    .sk-settings-sidebar .skeleton:nth-child(3) { width: 70%; }
+    .sk-settings-main { flex: 1; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sk-settings-main .skeleton { height: 12px; }
+    .sk-settings-main .skeleton:first-child { width: 50%; height: 18px; }
+    .sk-settings-main .skeleton:nth-child(2) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(3) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(4) { width: 100%; height: 36px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(5) { width: 100%; height: 80px; border-radius: var(--radius-md); }
+    .sk-settings-main .skeleton:nth-child(6) { width: 40%; height: 36px; border-radius: var(--radius-md); }
+    .sk-profile { width: 280px; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+    .sk-profile-avatar { width: 70px; height: 70px; border-radius: 50%; }
+    .sk-profile .skeleton:nth-child(2) { width: 50%; height: 16px; }
+    .sk-profile .skeleton:nth-child(3) { width: 35%; height: 12px; }
+    .sk-profile-field { width: 100%; display: flex; flex-direction: column; gap: var(--space-1); }
+    .sk-profile-field .skeleton:first-child { width: 30%; height: 10px; }
+    .sk-profile-field .skeleton:last-child { width: 100%; height: 34px; border-radius: var(--radius-md); }
+    .sk-error { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+    .sk-error-404 { font-family: var(--font-family-display); font-size: 64px; line-height: 1; color: var(--color-outline); letter-spacing: -0.03em; }
+    .sk-error .skeleton:nth-child(2) { width: 180px; height: 14px; }
+    .sk-error .skeleton:nth-child(3) { width: 120px; height: 36px; border-radius: var(--radius-round); }
+    .sk-analytics { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--space-3); }
+    .sk-analytics-filters { display: flex; gap: var(--space-2); }
+    .sk-analytics-filters .skeleton { flex: 1; height: 28px; border-radius: var(--radius-round); }
+    .sk-analytics-charts { display: flex; gap: var(--space-3); }
+    .sk-analytics-charts .skeleton { flex: 1; height: 80px; border-radius: var(--radius-md); }
+    .sk-analytics-table { width: 100%; display: flex; flex-direction: column; gap: var(--space-2); }
+    .sk-analytics-table-head { display: flex; gap: var(--space-3); }
+    .sk-analytics-table-head .skeleton { flex: 1; height: 12px; }
+    .sk-analytics-table-head .skeleton:first-child { flex: 2; }
+    .sk-analytics-table-row { display: flex; gap: var(--space-3); }
+    .sk-analytics-table-row .skeleton { flex: 1; height: 10px; }
+    .sk-analytics-table-row .skeleton:first-child { flex: 2; }
+
     @media (max-width: 720px) {
       .display-container { padding: var(--space-4) var(--space-4) var(--space-8); }
       .variation-body { padding: var(--space-4); }
+      .gallery-section { padding: var(--space-4) var(--space-4) var(--space-2); }
     }
   </style>
 </head>
@@ -74,9 +196,9 @@
       <div class="view-navbar-nav">
         <a href="index.html" class="view-navbar-link">Components</a>
         <span class="view-navbar-divider"></span>
-        <a href="patterns.html" class="view-navbar-link">Patterns</a>
+        <a href="display.html#patterns" class="view-navbar-link">Patterns</a>
         <span class="view-navbar-divider"></span>
-        <a href="pages.html" class="view-navbar-link">Pages</a>
+        <a href="display.html#pages" class="view-navbar-link">Pages</a>
       </div>
     </div>
     <div class="view-navbar-actions">
@@ -86,156 +208,470 @@
       </button>
     </div>
   </nav>
+  <script src="scripts/main.js"></script>
 
-  <header class="view-header">
-    <h1 id="display-title"></h1>
-    <p id="display-desc"></p>
-  </header>
+  <!-- ── Gallery ──────────────────────────────────────────── -->
+  <div id="display-gallery">
 
-  <div class="display-container" id="display-container">
-    <p style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">Loading&hellip;</p>
+    <header class="view-header">
+      <h1><i class="solar--layers-line-duotone"></i> Patterns &amp; Pages</h1>
+      <p>Browse reusable patterns and full-page layouts. Click any card to explore its variations.</p>
+    </header>
+
+    <h2 class="gallery-section" id="patterns"><i class="solar--layers-line-duotone"></i> Patterns</h2>
+    <div class="view-grid">
+
+      <a href="display.html?cat=patterns&amp;type=auth" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-auth">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="view-card-body">
+            <h3>Authentication Flow</h3>
+            <p>The layout structure for login, signup, and forgot-password steps, with form fields and a primary CTA.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=search-filter" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-search">
+            <div class="skeleton"></div>
+            <div class="sk-search-row">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Search &amp; Filter</h3>
+            <p>A combination of an input field, dropdown filters, and tag chips for narrowing results.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=onboarding" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-onboard">
+            <div class="sk-onboard-text">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-onboard-footer">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Onboarding Carousel</h3>
+            <p>A step-by-step wizard pattern with illustration, headline, dot indicators, and "Next" / "Skip" actions.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=data-table" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-table">
+            <div class="sk-table-head">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-table-pagination">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Data Table with Pagination</h3>
+            <p>A complex pattern combining data rows, selection checkboxes, and page navigation controls.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=empty-states" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-empty">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="view-card-body">
+            <h3>Empty States</h3>
+            <p>The standardized layout with illustration, headline, supporting text, and a primary action button used when no data exists.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=pricing" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-pricing">
+            <div class="sk-pricing-card">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-pricing-card featured">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-pricing-card">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Pricing</h3>
+            <p>Subscription tier cards with feature lists, pricing, and call-to-action buttons.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=product-card" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-pcard">
+            <div class="skeleton sk-pcard-image"></div>
+            <div class="sk-pcard-info">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="sk-pcard-stars">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+              </div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Product Card</h3>
+            <p>Product showcase with image placeholder, star rating, description lines, and a CTA button.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=patterns&amp;type=checkout" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-cart">
+            <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-cart-item"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="sk-cart-total"><div class="skeleton"></div><div class="skeleton"></div></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="view-card-body">
+            <h3>Checkout / Cart Summary</h3>
+            <p>A persistent summary block pattern with line items, totals, and a primary CTA used across purchasing steps.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <h2 class="gallery-section" id="pages"><i class="solar--card-2-line-duotone"></i> Pages</h2>
+    <div class="view-grid">
+
+      <a href="display.html?cat=pages&amp;type=dashboard" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-dashboard">
+            <div class="sk-dashboard-metrics">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="skeleton sk-dashboard-chart"></div>
+            <div class="sk-dashboard-list">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>User Dashboard</h3>
+            <p>The landing screen containing the user's specific metrics, recent activity, and quick actions.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=pages&amp;type=settings" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-settings">
+            <div class="sk-settings-sidebar">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-settings-main">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Settings</h3>
+            <p>Preference panels with sidebar navigation and form controls across general, security, and notifications tabs.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=pages&amp;type=profile" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-profile">
+            <div class="skeleton sk-profile-avatar"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="sk-profile-field">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-profile-field">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>User Profile Page</h3>
+            <p>The screen where an individual edits their personal bio, email, and avatar.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=pages&amp;type=404" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-error">
+            <div class="sk-error-404">404</div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+          <div class="view-card-body">
+            <h3>Error Pages</h3>
+            <p>Full-screen error layouts for different HTTP error scenarios.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="display.html?cat=pages&amp;type=analytics" class="view-card">
+        <div class="view-card-preview">
+          <div class="sk-analytics">
+            <div class="sk-analytics-filters">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-analytics-charts">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+            <div class="sk-analytics-table">
+              <div class="sk-analytics-table-head">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+              </div>
+              <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+              <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+              <div class="sk-analytics-table-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            </div>
+          </div>
+          <div class="view-card-body">
+            <h3>Analytics Reports Screen</h3>
+            <p>A data-heavy page displaying specific charts, logs, and export options.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── Variation Viewer ─────────────────────────────────── -->
+  <div id="display-variation" style="display:none">
+    <header class="view-header">
+      <h1 id="display-title"></h1>
+      <p id="display-desc"></p>
+    </header>
+    <div class="display-container" id="display-container">
+      <p class="loading-dots" style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">Loading</p>
+    </div>
   </div>
 
   <script>
     var params = new URLSearchParams(location.search);
-    var cat = params.get('cat') || 'patterns';
+    var cat = params.get('cat');
     var type = params.get('type');
 
-    var labels = {
-      patterns: {
-        auth: { title: 'Authentication Flow', desc: 'Login, signup, and password recovery screens with form validation states.' },
-        'search-filter': { title: 'Search & Filter', desc: 'Search bars, filter chips, and result display variations.' },
-        onboarding: { title: 'Onboarding Carousel', desc: 'Step-by-step welcome flows with illustrations and call-to-action.' },
-        'data-table': { title: 'Data Table', desc: 'Tabular data views with sorting, pagination, and inline actions.' },
-        'empty-states': { title: 'Empty States', desc: 'Null-slate layouts with guidance text, illustration, and primary actions.' },
-        pricing: { title: 'Pricing', desc: 'Subscription tiers with monthly, annual, and enterprise plan comparisons.' },
-        'product-card': { title: 'Product Card', desc: 'Item showcase with image, rating, price, reviews, and purchase actions.' },
-        checkout: { title: 'Checkout / Cart', desc: 'Purchase flow with cart summary, shipping details, and payment confirmation.' }
-      },
-      pages: {
-        dashboard: { title: 'User Dashboard', desc: 'Personal metrics, activity feeds, and quick-action panels.' },
-        settings: { title: 'Settings', desc: 'Preference panels with sidebar navigation and form controls.' },
-        profile: { title: 'User Profile', desc: 'Personal information editor with avatar, bio, and account settings.' },
-        '404': { title: 'Error Pages', desc: 'Full-screen error layouts for different HTTP error scenarios.' },
-        analytics: { title: 'Analytics Reports', desc: 'Data dashboards with charts, logs, filters, and export controls.' }
-      }
-    };
+    if (cat && type) {
+      document.getElementById('display-gallery').style.display = 'none';
+      document.getElementById('display-variation').style.display = 'block';
 
-    var label = (labels[cat] && labels[cat][type]) || { title: type || 'Unknown', desc: '' };
-    document.getElementById('display-title').textContent = label.title;
-    document.getElementById('display-desc').textContent = label.desc;
+      var labels = {
+        patterns: {
+          auth: { title: 'Authentication Flow', desc: 'Login, signup, and password recovery screens with form validation states.' },
+          'search-filter': { title: 'Search & Filter', desc: 'Search bars, filter chips, and result display variations.' },
+          onboarding: { title: 'Onboarding Carousel', desc: 'Step-by-step welcome flows with illustrations and call-to-action.' },
+          'data-table': { title: 'Data Table', desc: 'Tabular data views with sorting, pagination, and inline actions.' },
+          'empty-states': { title: 'Empty States', desc: 'Null-slate layouts with guidance text, illustration, and primary actions.' },
+          pricing: { title: 'Pricing', desc: 'Subscription tiers with monthly, annual, and enterprise plan comparisons.' },
+          'product-card': { title: 'Product Card', desc: 'Item showcase with image, rating, price, reviews, and purchase actions.' },
+          checkout: { title: 'Checkout / Cart', desc: 'Purchase flow with cart summary, shipping details, and payment confirmation.' }
+        },
+        pages: {
+          dashboard: { title: 'User Dashboard', desc: 'Personal metrics, activity feeds, and quick-action panels.' },
+          settings: { title: 'Settings', desc: 'Preference panels with sidebar navigation and form controls.' },
+          profile: { title: 'User Profile', desc: 'Personal information editor with avatar, bio, and account settings.' },
+          '404': { title: 'Error Pages', desc: 'Full-screen error layouts for different HTTP error scenarios.' },
+          analytics: { title: 'Analytics Reports', desc: 'Data dashboards with charts, logs, filters, and export controls.' }
+        }
+      };
 
-    var files = {
-      patterns: {
-        auth: [
-          { file: '01-login.html', label: 'Login Form' },
-          { file: '02-signup.html', label: 'Signup Form' },
-          { file: '03-forgot-password.html', label: 'Forgot Password' }
-        ],
-        'search-filter': [
-          { file: '01-basic.html', label: 'Basic Search' },
-          { file: '02-advanced.html', label: 'Advanced Filters' }
-        ],
-        onboarding: [
-          { file: '01-welcome.html', label: 'Welcome Screen' },
-          { file: '02-features.html', label: 'Feature Highlight' },
-          { file: '03-complete.html', label: 'Completion Screen' }
-        ],
-        'data-table': [
-          { file: '01-basic.html', label: 'Basic Table' },
-          { file: '02-paginated.html', label: 'Paginated Table' },
-          { file: '03-actions.html', label: 'Table with Actions' }
-        ],
-        'empty-states': [
-          { file: '01-basic.html', label: 'Basic Empty State' },
-          { file: '02-illustration.html', label: 'With Illustration' },
-          { file: '03-suggestions.html', label: 'With Suggestions' }
-        ],
-        pricing: [
-          { file: '01-monthly.html', label: 'Monthly Tiers' },
-          { file: '02-annual.html', label: 'Annual Tiers' },
-          { file: '03-enterprise.html', label: 'Enterprise Contact' }
-        ],
-        'product-card': [
-          { file: '01-default.html', label: 'Default Card' },
-          { file: '02-with-reviews.html', label: 'With Reviews' },
-          { file: '03-out-of-stock.html', label: 'Out of Stock' }
-        ],
-        checkout: [
-          { file: '01-cart.html', label: 'Cart Summary' },
-          { file: '02-shipping.html', label: 'Shipping Details' },
-          { file: '03-payment.html', label: 'Payment Confirmation' }
-        ]
-      },
-      pages: {
-        dashboard: [
-          { file: '01-overview.html', label: 'Dashboard Overview' },
-          { file: '02-with-data.html', label: 'With Activity Data' },
-          { file: '03-loading.html', label: 'Loading State' }
-        ],
-        settings: [
-          { file: '01-general.html', label: 'General Settings' },
-          { file: '02-security.html', label: 'Security Settings' },
-          { file: '03-notifications.html', label: 'Notification Preferences' }
-        ],
-        profile: [
-          { file: '01-view.html', label: 'Profile View' },
-          { file: '02-edit.html', label: 'Profile Edit' },
-          { file: '03-security.html', label: 'Security Settings' }
-        ],
-        '404': [
-          { file: '01-basic.html', label: '403 Forbidden' },
-          { file: '02-search.html', label: '404 Not Found' },
-          { file: '03-branded.html', label: '500 Server Error' }
-        ],
-        analytics: [
-          { file: '01-overview.html', label: 'Reports Overview' },
-          { file: '02-detailed.html', label: 'Detailed Report' },
-          { file: '03-export.html', label: 'Export View' }
-        ]
-      }
-    };
+      var label = (labels[cat] && labels[cat][type]) || { title: type || 'Unknown', desc: '' };
+      document.getElementById('display-title').textContent = label.title;
+      document.getElementById('display-desc').textContent = label.desc;
 
-    var container = document.getElementById('display-container');
-    var list = files[cat] && files[cat][type];
+      var files = {
+        patterns: {
+          auth: [
+            { file: '01-login.html', label: 'Login Form' },
+            { file: '02-signup.html', label: 'Signup Form' },
+            { file: '03-forgot-password.html', label: 'Forgot Password' }
+          ],
+          'search-filter': [
+            { file: '01-basic.html', label: 'Basic Search' },
+            { file: '02-advanced.html', label: 'Advanced Filters' }
+          ],
+          onboarding: [
+            { file: '01-welcome.html', label: 'Welcome Screen' },
+            { file: '02-features.html', label: 'Feature Highlight' },
+            { file: '03-complete.html', label: 'Completion Screen' }
+          ],
+          'data-table': [
+            { file: '01-basic.html', label: 'Basic Table' },
+            { file: '02-paginated.html', label: 'Paginated Table' },
+            { file: '03-actions.html', label: 'Table with Actions' }
+          ],
+          'empty-states': [
+            { file: '01-basic.html', label: 'Basic Empty State' },
+            { file: '02-illustration.html', label: 'With Illustration' },
+            { file: '03-suggestions.html', label: 'With Suggestions' }
+          ],
+          pricing: [
+            { file: '01-monthly.html', label: 'Monthly Tiers' },
+            { file: '02-annual.html', label: 'Annual Tiers' },
+            { file: '03-enterprise.html', label: 'Enterprise Contact' }
+          ],
+          'product-card': [
+            { file: '01-default.html', label: 'Default Card' },
+            { file: '02-with-reviews.html', label: 'With Reviews' },
+            { file: '03-out-of-stock.html', label: 'Out of Stock' }
+          ],
+          checkout: [
+            { file: '01-cart.html', label: 'Cart Summary' },
+            { file: '02-shipping.html', label: 'Shipping Details' },
+            { file: '03-payment.html', label: 'Payment Confirmation' }
+          ]
+        },
+        pages: {
+          dashboard: [
+            { file: '01-overview.html', label: 'Dashboard Overview' },
+            { file: '02-with-data.html', label: 'With Activity Data' },
+            { file: '03-loading.html', label: 'Loading State' }
+          ],
+          settings: [
+            { file: '01-general.html', label: 'General Settings' },
+            { file: '02-security.html', label: 'Security Settings' },
+            { file: '03-notifications.html', label: 'Notification Preferences' }
+          ],
+          profile: [
+            { file: '01-view.html', label: 'Profile View' },
+            { file: '02-edit.html', label: 'Profile Edit' },
+            { file: '03-security.html', label: 'Security Settings' }
+          ],
+          '404': [
+            { file: '01-basic.html', label: '403 Forbidden' },
+            { file: '02-search.html', label: '404 Not Found' },
+            { file: '03-branded.html', label: '500 Server Error' }
+          ],
+          analytics: [
+            { file: '01-overview.html', label: 'Reports Overview' },
+            { file: '02-detailed.html', label: 'Detailed Report' },
+            { file: '03-export.html', label: 'Export View' }
+          ]
+        }
+      };
 
-    if (list) {
-      container.innerHTML = '';
-      list.forEach(function(entry) {
-        var section = document.createElement('div');
-        section.className = 'variation-section';
-        var header = document.createElement('div');
-        header.className = 'variation-header';
-        header.textContent = entry.label;
-        var body = document.createElement('div');
-        body.className = 'variation-body';
-        var iframe = document.createElement('iframe');
-        iframe.src = cat + '/' + type + '/' + entry.file;
-        iframe.loading = 'lazy';
-        iframe.style.height = '300px';
-        iframe.addEventListener('load',function(){var t=document.documentElement.getAttribute('data-theme');if(t)this.contentWindow.postMessage({type:'theme',theme:t},'*')});
-        body.appendChild(iframe);
-        section.appendChild(header);
-        section.appendChild(body);
-        container.appendChild(section);
-      });
+      var container = document.getElementById('display-container');
+      var list = files[cat] && files[cat][type];
 
-      window.addEventListener('message', function(e) {
-        if (e.data && e.data.type === 'resize') {
-          var frames = container.querySelectorAll('iframe');
-          for (var i = 0; i < frames.length; i++) {
-            if (frames[i].contentWindow === e.source) {
-              frames[i].style.height = e.data.height + 'px';
-              break;
+      if (list) {
+        container.innerHTML = '';
+        list.forEach(function(entry) {
+          var section = document.createElement('div');
+          section.className = 'variation-section';
+          var header = document.createElement('div');
+          header.className = 'variation-header';
+          header.textContent = entry.label;
+          var body = document.createElement('div');
+          body.className = 'variation-body';
+          var iframe = document.createElement('iframe');
+          iframe.src = cat + '/' + type + '/' + entry.file;
+          iframe.loading = 'lazy';
+          iframe.style.height = '300px';
+          iframe.addEventListener('load',function(){var t=document.documentElement.getAttribute('data-theme');if(t)this.contentWindow.postMessage({type:'theme',theme:t},'*')});
+          body.appendChild(iframe);
+          section.appendChild(header);
+          section.appendChild(body);
+          container.appendChild(section);
+        });
+
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.type === 'resize') {
+            var frames = container.querySelectorAll('iframe');
+            for (var i = 0; i < frames.length; i++) {
+              if (frames[i].contentWindow === e.source) {
+                frames[i].style.height = e.data.height + 'px';
+                break;
+              }
             }
           }
-        }
-      });
-    } else {
-      container.innerHTML = '<p style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">' + (type ? 'No variations for this ' + cat.slice(0, -1) + '.' : 'Select a ' + cat.slice(0, -1) + ' from the gallery.') + '</p>';
+        });
+      } else {
+        container.innerHTML = '<p style="text-align:center;padding:var(--space-16);color:var(--color-on-surface-variant)">' + (type ? 'No variations for this ' + cat.slice(0, -1) + '.' : 'Select a ' + cat.slice(0, -1) + ' from the gallery.') + '</p>';
+      }
     }
   </script>
 
-<script>(function(){var b=document.getElementById('theme-toggle'),h=document.documentElement,s=localStorage.getItem('theme');if(s)h.setAttribute('data-theme',s);b.addEventListener('click',function(){var n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);document.querySelectorAll('iframe').forEach(function(f){f.contentWindow.postMessage({type:'theme',theme:n},'*')})})})();</script>
 </body>
 </html>
